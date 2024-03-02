@@ -6,130 +6,152 @@
     <title>MD Tételek</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden; 
+}
 
-        .navbar {
-            width: 210px;
-            height: 100%;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            left: 0;
-            overflow-y: auto;
-        }
+.navbar {
+    width: 210px;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
 
-        .navbar ul {
-            list-style-type: none;
-            padding: 0;
-            border-bottom: 1px solid #555; 
-            font-style: normal; 
-        }
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    border-bottom: 1px solid #555; 
+    font-style: normal; 
+}
 
-        .navbar li {
-            padding: 10px 10px; 
-            margin: 3px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 1.2rem;
-            font-style: italic;
-        }
+.navbar li {
+    padding: 10px 10px; 
+    margin: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-style: italic;
+}
 
-        .navbar li:hover {
-            background-color: #555;
-            border-bottom: none; 
-        }
+.navbar li:hover {
+    background-color: #555;
+    border-bottom: none; 
+}
 
-       
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-        p {
-            margin: 2px;
-            font-size: 1.2rem;
-        }
+p {
+    margin: 2px;
+    font-size: 1.2rem;
+}
 
-        .tetel-lista {
-            margin-left: 0;
-            padding-left: 20px;
-        }
+.tetel-lista {
+    margin-left: 0;
+    padding-left: 20px;
+}
 
-        .tetel-lista p {
-            margin: 5px 0;
-            font-size: 1rem;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            .navbar {
-                width: 150px;
-               
-            }
-            .toggle-nightmode{
-                display: none;
-            }
-            .navbar li{
-                font-size: 15px;
-            }
-            body{
-                margin-left: -45px;
-            }
-            #nav-tortenelem, #nav-irodalom, #nav-nyelvtan{
-                font-size: 18px;
-            }
-        }
-        .toggle-nightmode {
-        position: absolute;
-        display: none;
+.tetel-lista p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+.toggle-nightmode {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: #FFD700; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 9999; 
+    margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .toggle-nightmode {
+        position: fixed;
         bottom: 10px;
         left: 10px;
-        color: #FFD700; 
-        cursor: pointer;
-        transition: color 0.3s ease;
-        z-index: 9999; 
-        margin: 5px;
-    
     }
+}
+.toggle-nightmode:hover {
+    color: #000; 
+}
 
-    .toggle-nightmode:hover {
-        color: #000; 
-    }
-    body.nightmode {
-        background-color: #444; 
-    }
+body.nightmode {
+    background-color: #444; 
+}
 
+.content {
+    padding-right: 15px; /* Állítsd be az adott scrollbar szélességének megfelelően */
+    box-sizing: border-box;
+}
+
+
+.content li{
+    font-size: 18px;
+}
+
+body.nightmode .content {
+    background-color: #555; 
+    color: rgb(0, 0, 0);
+}
+
+#nav-tortenelem, #nav-irodalom, #nav-nyelvtan {
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid #555;
+    font-size: 1.4rem;
+}
+@media only screen and (max-width: 600px) {
+    .navbar {
+        display: none;
+    }
     .content {
-        margin-left: 220px;
-        padding: 20px;
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        width: 100%; 
+        border-radius: 0;
+        margin-left: 0; 
     }
-    .content li{
+    .navbar li {
+        font-size: 15px;
+    }
+    #nav-tortenelem, #nav-irodalom, #nav-nyelvtan {
         font-size: 18px;
     }
-
-    body.nightmode .content {
-        background-color: #555; 
-        color: rgb(0, 0, 0);
+    .navbar {
+        overflow-y: initial; 
     }
-    #nav-tortenelem, #nav-irodalom, #nav-nyelvtan{
-        padding: 10px;
-        color: #fff;
-        cursor: pointer;
-        border-bottom: 1px solid #555;
-        font-size:1.4rem;
-    }
+}
+.mobile-nav-icon {
+    display: none;
+    position: fixed;
+    top: 8px; 
+    left: 8px; 
+    z-index: 9999;
+    cursor: pointer;
+}
 
-    
+@media only screen and (max-width: 600px) {
+    .mobile-nav-icon {
+        display: block;
+    }
+    .navbar {
+        padding-top: 40px; /
+    }
+}
+
     </style>
 </head>
 <body>
@@ -144,8 +166,62 @@
     </span>
     
 </nav>
+<div class="mobile-nav-icon">
+    <i class="fas fa-bars fa-2x"></i>
+</div>
 <div class="content" id="content"></div>
 <script>
+var navbar = document.querySelector('.navbar');
+var mobileNavIcon = document.querySelector('.mobile-nav-icon i');
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.addEventListener('click', function(event) {
+        const isNavbar = event.target.closest('.navbar');
+        const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
+        const isMobileView = window.innerWidth <= 600; 
+        if (!isNavbar && !isMobileNavIcon && isMobileView) {
+            navbar.style.display = 'none';
+            mobileNavIcon.style.color = 'black';
+        }
+    });
+
+
+    const liElements = document.querySelectorAll('.navbar li');
+    liElements.forEach(function(li) {
+        li.addEventListener('click', function(event) {
+            const isMobileView = window.innerWidth <= 600;
+            if (isMobileView) {
+                navbar.style.display = 'none';
+                mobileNavIcon.style.color = 'black';
+            }
+  
+            event.stopPropagation();
+        });
+    });
+});
+
+mobileNavIcon.addEventListener('click', function(event) {
+    event.stopPropagation(); 
+    if (navbar.style.display === 'none' || navbar.style.display === '') {
+        navbar.style.display = 'block'; 
+        mobileNavIcon.style.color = 'white'; 
+    } else {
+        navbar.style.display = 'none';
+        mobileNavIcon.style.color = 'black'; 
+    }
+});
+
+window.addEventListener('scroll', function() {
+    var mobileNavIcon = document.querySelector('.mobile-nav-icon');
+    if (window.scrollY > 50) { 
+        mobileNavIcon.style.display = 'none'; 
+    } else {
+        mobileNavIcon.style.display = 'block'; 
+    }
+});
+
+
     let selectedFileName = ""; 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -337,11 +413,11 @@ function getContent(filename) {
         if (body.classList.contains('nightmode')) {
             body.classList.remove('nightmode');
             navbar.style.backgroundColor = '#333';
-            nightModeIcon.style.color = '#FFD700'; // visszaállítjuk az alapértelmezett sárga színt
+            nightModeIcon.style.color = '#FFD700'; 
         } else {
             body.classList.add('nightmode');
             navbar.style.backgroundColor = '#222';
-            nightModeIcon.style.color = '#000'; // feketére változtatjuk az ikon színét
+            nightModeIcon.style.color = '#000'; 
         }
     }
 </script>
