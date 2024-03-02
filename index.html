@@ -14,7 +14,7 @@
         }
 
         .navbar {
-            width: 200px;
+            width: 230px;
             height: 100%;
             background-color: #333;
             position: fixed;
@@ -26,20 +26,26 @@
         .navbar ul {
             list-style-type: none;
             padding: 0;
+            border-bottom: 1px solid #555; 
+            font-style: normal; 
         }
 
         .navbar li {
-            padding: 10px;
+            padding: 5px 10px; 
             color: #fff;
             cursor: pointer;
-            border-bottom: 1px solid #555;
-            font-size:1.2rem;
+            font-size: 1.3rem;
         }
 
         .navbar li:hover {
             background-color: #555;
+            border-bottom: none; 
         }
 
+        .navbar ul li {
+
+            font-style: italic;
+        }
         .content {
             margin-left: 220px;
             padding: 20px;
@@ -66,6 +72,10 @@
         @media only screen and (max-width: 600px) {
             .navbar {
                 width: 160px;
+               
+            }
+            .navbar li{
+                font-size: 15px;
             }
             .content{
                 margin-left: 120px;
@@ -73,6 +83,9 @@
             }
             body{
                 margin-left: -45px;
+            }
+            #nav-tortenelem, #nav-irodalom, #nav-nyelvtan{
+                font-size: 18px;
             }
         }
         .toggle-nightmode {
@@ -101,16 +114,45 @@
         border: 1px solid #ccc;
         border-radius: 5px;
     }
+    .content li{
+        font-size: 18px;
+    }
 
     body.nightmode .content {
         background-color: #555; 
         color: rgb(0, 0, 0);
     }
+    #nav-tortenelem, #nav-irodalom, #nav-nyelvtan{
+        padding: 10px;
+        color: #fff;
+        cursor: pointer;
+        border-bottom: 1px solid #555;
+        font-size:1.4rem;
+    }
+    .fas.fa-search {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fas.fa-search:hover {
+    color: #555;
+}
+
+    
     </style>
 </head>
 <body>
 <nav class="navbar">
     <ul id="navbar-list"></ul>
+     <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
+    <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
+    <ul id="nav-nyelvtan"><i class="fas fa-folder"></i> Nyelvtan</ul> 
     <span class="toggle-nightmode" onclick="toggleNightMode()">
         <i class="fas fa-2x fa-moon"></i>
     </span>
@@ -121,61 +163,96 @@
     let selectedFileName = ""; 
 
     document.addEventListener("DOMContentLoaded", function () {
-        initializeContent(); // Az oldal betöltésekor inicializáljuk a tartalmat
+    initializeContent();
 
-        const navbarList = document.getElementById("navbar-list");
+    const navbarList = document.getElementById("navbar-list");
 
-        const homeListItem = createNavItem("Kezdőlap", () => {
-            initializeContent(); // A Kezdőlap gombra kattintva is inicializáljuk a tartalmat
-        });
-        navbarList.appendChild(homeListItem);
+    const homeListItem = createNavItem("Kezdőlap", () => {
+        initializeContent();
+    });
+    navbarList.appendChild(homeListItem);
+    function generateListItems(files) {
+    const items = [];
+    files.forEach(filename => {
+        if (filename.endsWith('.md')) {
+            const listItem = document.createElement("li");
+            const icon = document.createElement("i");
+            icon.classList.add("fas", "fa-file");
+            const text = document.createTextNode(filename.split('\\').pop().split('.')[0]); // Csak a fájl nevét vegyük figyelembe
+            listItem.appendChild(icon);
+            listItem.appendChild(document.createTextNode(' ')); // Space karakter hozzáadása
+            listItem.appendChild(text); // Fájl név hozzáadása
+            listItem.addEventListener("click", () => {
+                selectedFileName = filename.split('.')[0];
+                getContent(filename);
+                clearActiveStates();
+                const previousIcon = document.querySelector('.fa-chevron-right');
+                if (previousIcon) {
+                    previousIcon.classList.remove('fa-chevron-right');
+                    previousIcon.classList.add('fa-file');
+                }
+                icon.classList.remove('fa-file');
+                icon.classList.add('fa-chevron-right');
+            });
 
-        fetch("/api/md")
+            items.push(listItem);
+        }
+    });
+    return items;
+}
+
+
+
+function addListItemsToNav(ulElement, files) {
+    const mdFiles = files.filter(filename => filename.endsWith('.md'));
+    if (mdFiles.length === 0) return;
+
+    const listItems = generateListItems(mdFiles);
+    listItems.forEach(item => {
+        const liElement = document.createElement("li");
+        liElement.appendChild(item);
+        ulElement.appendChild(liElement);
+    });
+}
+
+    ['Tortenelem', 'Irodalom', 'Nyelvtan'].forEach(folder => {
+        fetch(`/api/files/${encodeURIComponent(folder)}`)
             .then(response => response.json())
             .then(data => {
-                data.files.forEach(filename => {
-                    if (filename.endsWith('.md')) {
-                        const listItem = document.createElement("li");
-                        const filenameWithoutExtension = filename.split('.')[0];
-
-                        if (filenameWithoutExtension === selectedFileName) {
-                            listItem.innerHTML = '<i class="fas fa-chevron-right"></i> ' + filenameWithoutExtension;
-                        } else {
-                            listItem.innerHTML = '<i class="fas fa-folder"></i> ' + filenameWithoutExtension;
-                        }
-
-                        listItem.addEventListener("click", () => {
-                            selectedFileName = filenameWithoutExtension; 
-                            getContent(filename);
-                            clearActiveStates(); 
-                            listItem.innerHTML = '<i class="fas fa-chevron-right"></i> ' + filenameWithoutExtension;
-                        });
-                        navbarList.appendChild(listItem);
-                    }
-                });
-                showAllItems(); // Az oldal betöltésekor is megjelenítjük a kidolgozott tételeket
+                const ulElement = document.getElementById(`nav-${folder.toLowerCase()}`);
+                addListItemsToNav(ulElement, data.files);
             })
-            .catch(error => console.error('Hiba történt a fájllista lekérdezése közben:', error));
+            .catch(error => console.error(`Hiba történt a ${folder} mappa lekérdezése közben:`, error));
     });
+});
 
-    function initializeContent() {
-        document.getElementById("content").innerHTML = `
-            <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
-            <p>Készítette: Stiegelmayer Bálint</p>
-            <h2>Kidolgozott tételek:</h2>`;
-            
+
+function initializeContent() {
+    document.getElementById("content").innerHTML = `
+        <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
+        <p>Készítette: Stiegelmayer Bálint</p>
+        <h2>Kidolgozott tételek:</h2>`;
+       
         clearActiveStates(); 
-        showAllItems()
-    }
+        showAllItems();
+}
 
-    function createNavItem(label, clickHandler) {
-        const listItem = document.createElement("li");
-        listItem.style.fontWeight = "bold";
-        listItem.style.fontSize = "1.4rem";
-        listItem.innerHTML = `<i class="fas fa-home"></i> ${label}`;
-        listItem.addEventListener("click", clickHandler);
-        return listItem;
-    }
+
+function createNavItem(label, clickHandler) {
+    
+    const listItem = document.createElement("li");
+    listItem.style.fontWeight = "bold";
+    listItem.style.fontSize = "1.4rem";
+    listItem.innerHTML = `<i class="fas fa-home"></i> ${label}`;
+    listItem.addEventListener("click", () => {
+        clearActiveStates(); 
+        clickHandler();
+    
+
+    });
+    return listItem;
+}
+
 
     function clearActiveStates() {
         const navbarList = document.getElementById("navbar-list");
@@ -186,9 +263,34 @@
         });
     }
 
-    function getContent(filename) {
+    function addSearchIcon() {
+    const contentDiv = document.getElementById("content");
+    const searchIcon = document.createElement("i");
+    searchIcon.classList.add("fas", "fa-search");
+    searchIcon.style.float = "right";
+    searchIcon.style.cursor = "pointer";
+    searchIcon.addEventListener("click", searchInCurrentPage);
+    contentDiv.appendChild(searchIcon);
+}
+
+function searchInCurrentPage() {
+    const searchText = prompt("Keresés a dokumentumban:");
+    if (searchText !== null && searchText.trim() !== "") {
+        const contentText = document.getElementById("content").innerText;
+        const searchRegex = new RegExp(searchText, "gi");
+        const matches = contentText.match(searchRegex);
+        if (matches !== null) {
+    
+            alert(`A keresett szöveg "${searchText}" ${matches.length} alkalommal található a dokumentumban.`);
+        } else {
+            alert(`A keresett szöveg "${searchText}" nem található a dokumentumban.`);
+        }
+    }
+}
+
+function getContent(filename) {
     selectedFileName = filename.split('.')[0]; 
-    fetch(`/api/md/${filename}`)
+    fetch(`/api/md/${encodeURIComponent(filename)}`)
         .then(response => response.text())
         .then(data => {
             data = data.replace(/##(.*?)##/g, '<span style="background-color: yellow;">$1</span>');
@@ -198,41 +300,70 @@
             data = data.replace(/!!(.*?) /g, '<br>$1 ');
             data = data.replace(/\*\*(.*?)\.jpg\*\*/g, '<img src="Kepek/$1.jpg" style="max-width: 200px; max-height: 200px;">');
 
-
             const contentDiv = document.getElementById("content");
             contentDiv.innerHTML = data;
+
+
+            addSearchIcon();
+
         })
         .catch(error => console.error('Hiba történt a fájl tartalmának lekérése közben:', error));
 }
 
     function showAllItems() {
-        const navbarList = document.getElementById("navbar-list");
-        let count = 0;
-        navbarList.childNodes.forEach(node => {
-            if (!node.innerHTML.includes('Kezdőlap')) {
-                count++;
-            let lielemek =  document.getElementById("content");
-                lielemek.innerHTML += `<p><i>${count}.</i> ${node.innerText}</p>`;
-                
-            }
-        });
-    }
-    function toggleNightMode() {
-    const body = document.body;
-    const navbar = document.querySelector('.navbar');
-    const nightModeIcon = document.querySelector('.toggle-nightmode i');
-
-    if (body.classList.contains('nightmode')) {
-        body.classList.remove('nightmode');
-        navbar.style.backgroundColor = '#333';
-        nightModeIcon.style.color = '#FFD700'; // visszaállítjuk az alapértelmezett sárga színt
         
-    } else {
-        body.classList.add('nightmode');
-        navbar.style.backgroundColor = '#222';
-        nightModeIcon.style.color = '#000'; // feketére változtatjuk az ikon színét
-    }
+    const contentDiv = document.getElementById("content");
+    contentDiv.innerHTML = `
+        <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
+        <p>Készítette: Stiegelmayer Bálint</p>`;
+
+    fetch(`/api/files`)
+        .then(response => response.json())
+        .then(data => {
+            let totalCount = 0; 
+            data.directories.forEach(directory => {
+                fetch(`/api/files/${encodeURIComponent(directory)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.files.length > 0) {
+                            let count = 0; 
+                            contentDiv.innerHTML += `<h2>${directory}</h2>`;
+                            data.files.forEach(file => {
+                                if (file.endsWith('.md')) {
+                                    count++;
+                                    totalCount++;
+                                    const fileName = file.split('.')[0].split('\\').pop(); 
+                                    contentDiv.innerHTML += `<li style="font-size: 1.2rem; list-style: none; margin-left: 20px;"><i>${count}. ${fileName}</li>`;
+                                }
+                            });
+                            contentDiv.innerHTML += '</ul>';
+                        }
+                    })
+                    .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
+            });
+        })
+        .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
 }
+
+
+    function toggleNightMode() {
+        const body = document.body;
+        const navbar = document.querySelector('.navbar');
+        const nightModeIcon = document.querySelector('.toggle-nightmode i');
+
+        if (body.classList.contains('nightmode')) {
+            body.classList.remove('nightmode');
+            navbar.style.backgroundColor = '#333';
+            nightModeIcon.style.color = '#FFD700'; // visszaállítjuk az alapértelmezett sárga színt
+        } else {
+            body.classList.add('nightmode');
+            navbar.style.backgroundColor = '#222';
+            nightModeIcon.style.color = '#000'; // feketére változtatjuk az ikon színét
+        }
+    }
 </script>
+
+
+
 </body>
 </html>

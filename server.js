@@ -8,21 +8,17 @@ const port = 3000;
 const indexPath = path.join(__dirname, 'index.html');
 const filesPath = path.join(__dirname, 'files');
 
+// Kinyeri az összes mappát a 'files' könyvtárból
+const getDirectories = (dirPath) => {
+    return fs.readdirSync(dirPath, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory() && ['Tortenelem', 'Irodalom', 'Nyelvtan'].includes(dirent.name))
+        .map(dirent => dirent.name);
+}
 app.get('/', (req, res) => {
     res.sendFile(indexPath);
 });
 
 
-app.get('/api/md', (req, res) => {
-    fs.readdir(filesPath, (err, files) => {
-        if (err) {
-            res.status(500).send({ error: 'Unable to read the directory.' });
-        } else {
-            const mdFiles = files.filter(filename => filename.endsWith('.md'));
-            res.json({ files: mdFiles });
-        }
-    });
-});
 
 app.get('/api/md/:filename', (req, res) => {
     const filename = req.params.filename;
@@ -41,6 +37,7 @@ app.get('/api/md/:filename', (req, res) => {
         }
     });
 });
+
 app.get('/kepek/:filename', (req, res) => {
     const filename = req.params.filename;
     const imagePath = path.join(__dirname, 'Kepek', filename);
@@ -51,34 +48,24 @@ app.get('/kepek/:filename', (req, res) => {
         }
     });
 });
+app.get('/api/files/:folder', (req, res) => {
+    const folder = req.params.folder;
+    const folderPath = path.join(filesPath, folder);
 
-app.get('/api/files/:category', (req, res) => {
-    const category = req.params.category;
-    const categoryPath = path.join(filesPath, category);
-
-    fs.readdir(categoryPath, (err, files) => {
+    fs.readdir(folderPath, (err, files) => {
         if (err) {
-            res.status(500).send({ error: `Unable to read the directory for ${category}.` });
+            res.status(500).send({ error: 'Unable to read the directory.' });
         } else {
-            const fileList = files.map(file => ({ name: file }));
-            res.json({ files: fileList });
+            const fullFilesPath = files.map(file => path.join(folder, file));
+            res.json({ files: fullFilesPath });
         }
     });
 });
 
-
-app.get('/api/files/:category/:filename', (req, res) => {
-    const category = req.params.category;
-    const filename = req.params.filename;
-    const filePath = path.join(filesPath, category, filename);
-
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-            res.status(500).send({ error: 'Unable to read the file.' });
-        } else {
-            res.send(data);
-        }
-    });
+app.get('/api/files', (_req, res) => {
+    // Használjuk a korábban definiált getDirectories függvényt
+    const directories = getDirectories(filesPath);
+    res.json({ directories });
 });
 
 app.listen(port, () => {
