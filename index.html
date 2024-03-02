@@ -71,15 +71,11 @@
         
         @media only screen and (max-width: 600px) {
             .navbar {
-                width: 160px;
+                width: 150px;
                
             }
             .navbar li{
                 font-size: 15px;
-            }
-            .content{
-                margin-left: 120px;
-        
             }
             body{
                 margin-left: -45px;
@@ -129,25 +125,12 @@
         border-bottom: 1px solid #555;
         font-size:1.4rem;
     }
-    .fas.fa-search {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 999;
-    color: #333;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.fas.fa-search:hover {
-    color: #555;
-}
 
     
     </style>
 </head>
 <body>
+
 <nav class="navbar">
     <ul id="navbar-list"></ul>
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
@@ -178,10 +161,10 @@
             const listItem = document.createElement("li");
             const icon = document.createElement("i");
             icon.classList.add("fas", "fa-file");
-            const text = document.createTextNode(filename.split('\\').pop().split('.')[0]); // Csak a fájl nevét vegyük figyelembe
+            const text = document.createTextNode(filename.split('\\').pop().split('.')[0]); 
             listItem.appendChild(icon);
-            listItem.appendChild(document.createTextNode(' ')); // Space karakter hozzáadása
-            listItem.appendChild(text); // Fájl név hozzáadása
+            listItem.appendChild(document.createTextNode(' '));
+            listItem.appendChild(text); 
             listItem.addEventListener("click", () => {
                 selectedFileName = filename.split('.')[0];
                 getContent(filename);
@@ -263,30 +246,6 @@ function createNavItem(label, clickHandler) {
         });
     }
 
-    function addSearchIcon() {
-    const contentDiv = document.getElementById("content");
-    const searchIcon = document.createElement("i");
-    searchIcon.classList.add("fas", "fa-search");
-    searchIcon.style.float = "right";
-    searchIcon.style.cursor = "pointer";
-    searchIcon.addEventListener("click", searchInCurrentPage);
-    contentDiv.appendChild(searchIcon);
-}
-
-function searchInCurrentPage() {
-    const searchText = prompt("Keresés a dokumentumban:");
-    if (searchText !== null && searchText.trim() !== "") {
-        const contentText = document.getElementById("content").innerText;
-        const searchRegex = new RegExp(searchText, "gi");
-        const matches = contentText.match(searchRegex);
-        if (matches !== null) {
-    
-            alert(`A keresett szöveg "${searchText}" ${matches.length} alkalommal található a dokumentumban.`);
-        } else {
-            alert(`A keresett szöveg "${searchText}" nem található a dokumentumban.`);
-        }
-    }
-}
 
 function getContent(filename) {
     selectedFileName = filename.split('.')[0]; 
@@ -304,7 +263,7 @@ function getContent(filename) {
             contentDiv.innerHTML = data;
 
 
-            addSearchIcon();
+
 
         })
         .catch(error => console.error('Hiba történt a fájl tartalmának lekérése közben:', error));

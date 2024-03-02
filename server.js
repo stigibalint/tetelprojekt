@@ -37,7 +37,7 @@ app.get('/api/md/:filename', (req, res) => {
         }
     });
 });
-app.use('/files', express.static(filesPath));
+
 app.get('/kepek/:filename', (req, res) => {
     const filename = req.params.filename;
     const imagePath = path.join(__dirname, 'Kepek', filename);
