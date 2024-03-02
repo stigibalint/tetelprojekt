@@ -173,6 +173,7 @@ body.nightmode .content {
 <script>
 var navbar = document.querySelector('.navbar');
 var mobileNavIcon = document.querySelector('.mobile-nav-icon i');
+var mobileNavOpened = false; 
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -180,12 +181,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const isNavbar = event.target.closest('.navbar');
         const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
         const isMobileView = window.innerWidth <= 600; 
-        if (!isNavbar && !isMobileNavIcon && isMobileView) {
+
+        if (!isNavbar && !isMobileNavIcon && isMobileView && mobileNavOpened) {
             navbar.style.display = 'none';
             mobileNavIcon.style.color = 'black';
+            mobileNavOpened = false;
         }
     });
-
 
     const liElements = document.querySelectorAll('.navbar li');
     liElements.forEach(function(li) {
@@ -194,34 +196,49 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isMobileView) {
                 navbar.style.display = 'none';
                 mobileNavIcon.style.color = 'black';
+                mobileNavOpened = false;
             }
-  
             event.stopPropagation();
         });
     });
-});
 
-mobileNavIcon.addEventListener('click', function(event) {
-    event.stopPropagation(); 
-    if (navbar.style.display === 'none' || navbar.style.display === '') {
-        navbar.style.display = 'block'; 
-        mobileNavIcon.style.color = 'white'; 
-    } else {
-        navbar.style.display = 'none';
-        mobileNavIcon.style.color = 'black'; 
+    mobileNavIcon.addEventListener('click', function(event) {
+        event.stopPropagation(); 
+        if (!mobileNavOpened) {
+            navbar.style.display = 'block'; 
+            mobileNavIcon.style.color = 'white'; 
+            mobileNavOpened = true;
+        } else {
+            navbar.style.display = 'none';
+            mobileNavIcon.style.color = 'black'; 
+            mobileNavOpened = false;
+        }
+    });
+
+    window.addEventListener('scroll', function() {
+        var mobileNavIcon = document.querySelector('.mobile-nav-icon');
+        if (window.scrollY > 50) { 
+            mobileNavIcon.style.display = 'none'; 
+        } else {
+            mobileNavIcon.style.display = 'block'; 
+        }
+    });
+
+    window.addEventListener('resize', function() {
+        const isMobileView = window.innerWidth <= 600;
+        if (!isMobileView) {
+            navbar.style.display = 'block'; 
+            mobileNavIcon.style.color = 'white';
+            mobileNavOpened = false;
+        }
+    });
+
+    const isMobileView = window.innerWidth <= 600;
+    if (isMobileView) {
+        navbar.style.display = 'none'; 
+        mobileNavIcon.style.color = 'black';
     }
 });
-
-window.addEventListener('scroll', function() {
-    var mobileNavIcon = document.querySelector('.mobile-nav-icon');
-    if (window.scrollY > 50) { 
-        mobileNavIcon.style.display = 'none'; 
-    } else {
-        mobileNavIcon.style.display = 'block'; 
-    }
-});
-
-
     let selectedFileName = ""; 
 
     document.addEventListener("DOMContentLoaded", function () {
