@@ -14,7 +14,7 @@
         }
 
         .navbar {
-            width: 220px;
+            width: 210px;
             height: 100%;
             background-color: #333;
             position: fixed;
@@ -164,8 +164,9 @@
             const listItem = document.createElement("li");
             const icon = document.createElement("i");
             icon.classList.add("fas", "fa-file");
+            const text = document.createTextNode(filename.split('/').pop().split('\\').pop().split('.')[0]); 
             listItem.appendChild(icon);
-            const text = document.createTextNode(filename.split('\\').pop().split('.')[0]);
+            listItem.appendChild(document.createTextNode(' '));
             listItem.appendChild(text);
             listItem.addEventListener("click", () => {
                 selectedFileName = filename.split('.')[0];
@@ -179,6 +180,7 @@
                 icon.classList.remove('fa-file');
                 icon.classList.add('fa-chevron-right');
             });
+
             items.push(listItem);
         }
     });
@@ -190,13 +192,32 @@ function addListItemsToNav(ulElement, files) {
     const mdFiles = files.filter(filename => filename.endsWith('.md'));
     if (mdFiles.length === 0) return;
 
-    const listItems = generateListItems(mdFiles);
-    listItems.forEach(item => {
-        const liElement = document.createElement("li");
-        liElement.appendChild(item);
-        ulElement.appendChild(liElement);
+    mdFiles.forEach(filename => {
+        const listItem = document.createElement("li");
+        const icon = document.createElement("i");
+        icon.classList.add("fas", "fa-file");
+        const pureFileName = filename.split('\\').pop().split('.')[0]; 
+        const textNode = document.createTextNode(pureFileName); 
+        listItem.appendChild(icon);
+        listItem.appendChild(document.createTextNode(' '));
+        listItem.appendChild(textNode);
+        listItem.addEventListener("click", () => {
+            selectedFileName = filename.split('.')[0];
+            getContent(filename);
+            clearActiveStates();
+            const previousIcon = document.querySelector('.fa-chevron-right');
+            if (previousIcon) {
+                previousIcon.classList.remove('fa-chevron-right');
+                previousIcon.classList.add('fa-file');
+            }
+            icon.classList.remove('fa-file');
+            icon.classList.add('fa-chevron-right');
+        });
+
+        ulElement.appendChild(listItem);
     });
 }
+
 
     ['Tortenelem', 'Irodalom', 'Nyelvtan'].forEach(folder => {
         fetch(`/api/files/${encodeURIComponent(folder)}`)
