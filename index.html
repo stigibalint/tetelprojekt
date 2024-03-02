@@ -196,7 +196,10 @@ function addListItemsToNav(ulElement, files) {
         const listItem = document.createElement("li");
         const icon = document.createElement("i");
         icon.classList.add("fas", "fa-file");
-        const pureFileName = filename.split('\\').pop().split('.')[0]; 
+        const pureFileName = filename.split('/').pop().split('.')[0]; 
+ 
+        
+
         const textNode = document.createTextNode(pureFileName); 
         listItem.appendChild(icon);
         listItem.appendChild(document.createTextNode(' '));
