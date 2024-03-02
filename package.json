@@ -9,5 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "scripts": {
+    "build": "cp -R files dist && npm run build:client"
+
+  }
+  
 }
