@@ -14,7 +14,7 @@
         }
 
         .navbar {
-            width: 230px;
+            width: 220px;
             height: 100%;
             background-color: #333;
             position: fixed;
@@ -73,6 +73,9 @@
             .navbar {
                 width: 150px;
                
+            }
+            .toggle-nightmode{
+                display: none;
             }
             .navbar li{
                 font-size: 15px;
@@ -161,10 +164,9 @@
             const listItem = document.createElement("li");
             const icon = document.createElement("i");
             icon.classList.add("fas", "fa-file");
-            const text = document.createTextNode(filename.split('\\').pop().split('.')[0]); 
             listItem.appendChild(icon);
-            listItem.appendChild(document.createTextNode(' '));
-            listItem.appendChild(text); 
+            const text = document.createTextNode(filename.split('\\').pop().split('.')[0]);
+            listItem.appendChild(text);
             listItem.addEventListener("click", () => {
                 selectedFileName = filename.split('.')[0];
                 getContent(filename);
@@ -177,13 +179,11 @@
                 icon.classList.remove('fa-file');
                 icon.classList.add('fa-chevron-right');
             });
-
             items.push(listItem);
         }
     });
     return items;
 }
-
 
 
 function addListItemsToNav(ulElement, files) {
