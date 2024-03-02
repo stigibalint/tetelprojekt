@@ -34,7 +34,7 @@
             padding: 5px 10px; 
             color: #fff;
             cursor: pointer;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .navbar li:hover {
@@ -197,7 +197,7 @@ function addListItemsToNav(ulElement, files) {
         const listItem = document.createElement("li");
         const icon = document.createElement("i");
         icon.classList.add("fas", "fa-file");
-        const pureFileName = filename.split('/').pop().split('.')[0]; 
+        const pureFileName = filename.split(/[\\/]+/).pop().split('.')[0]; 
  
         
 
@@ -316,7 +316,7 @@ function getContent(filename) {
                                 if (file.endsWith('.md')) {
                                     count++;
                                     totalCount++;
-                                    const fileName = file.split('.')[0].split('\\').pop(); 
+                                    const fileName = file.split('.')[0].split(/[\\/]+/).pop(); 
                                     contentDiv.innerHTML += `<li style="font-size: 1.2rem; list-style: none; margin-left: 20px;"><i>${count}. ${fileName}</li>`;
                                 }
                             });
