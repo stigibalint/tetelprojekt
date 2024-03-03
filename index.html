@@ -6,7 +6,7 @@
     <title>MD Tételek</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-      body {
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -69,22 +69,43 @@ p {
 }
 .toggle-nightmode {
     position: fixed;
-    bottom: 10px;
-    left: 10px;
-    color: #FFD700; 
+    right: 10px; /* Jobb oldalra helyezés */
+    color: #FFD700;
     cursor: pointer;
     transition: color 0.3s ease;
-    z-index: 9999; 
-    margin: 5px;
+    z-index: 9999;
+    bottom: -40px;
+    margin-bottom: 60px;
 }
 
 @media only screen and (max-width: 600px) {
     .toggle-nightmode {
         position: fixed;
+        right: 10px;
         bottom: 10px;
-        left: 10px;
+        margin-bottom: 0;
     }
 }
+
+.navbar {
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        padding-bottom: 60px;
+    }
+}
+
+/* Hozzáadva a kód a toggle-nightmode megjelenítéséhez a mobilnézeten */
+body {
+    overflow-y: scroll;
+}
+
+body:not(.nightmode) .toggle-nightmode {
+    display: block;
+}
+
 .toggle-nightmode:hover {
     color: #000; 
 }
@@ -94,7 +115,7 @@ body.nightmode {
 }
 
 .content {
-    padding-right: 15px; /* Állítsd be az adott scrollbar szélességének megfelelően */
+    padding-right: 15px; 
     box-sizing: border-box;
 }
 
@@ -125,10 +146,10 @@ body.nightmode .content {
         margin-left: 0; 
     }
     .navbar li {
-        font-size: 15px;
+        font-size: 18px;
     }
     #nav-tortenelem, #nav-irodalom, #nav-nyelvtan {
-        font-size: 18px;
+        font-size: 21px;
     }
     .navbar {
         overflow-y: initial; 
@@ -151,7 +172,6 @@ body.nightmode .content {
         padding-top: 40px; /
     }
 }
-
     </style>
 </head>
 <body>
@@ -173,37 +193,28 @@ body.nightmode .content {
 <script>
 var navbar = document.querySelector('.navbar');
 var mobileNavIcon = document.querySelector('.mobile-nav-icon i');
-var mobileNavOpened = false; 
+var mobileNavOpened = false;
+var isMobileView = window.innerWidth <= 600;
 
 document.addEventListener("DOMContentLoaded", function () {
+    var mobileNavIcon = document.querySelector('.mobile-nav-icon i');
+    var mobileNavOpened = false;
 
     document.addEventListener('click', function(event) {
-        const isNavbar = event.target.closest('.navbar');
-        const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
-        const isMobileView = window.innerWidth <= 600; 
-
-        if (!isNavbar && !isMobileNavIcon && isMobileView && mobileNavOpened) {
-            navbar.style.display = 'none';
-            mobileNavIcon.style.color = 'black';
-            mobileNavOpened = false;
-        }
-    });
-
-    const liElements = document.querySelectorAll('.navbar li');
-    liElements.forEach(function(li) {
-        li.addEventListener('click', function(event) {
-            const isMobileView = window.innerWidth <= 600;
-            if (isMobileView) {
-                navbar.style.display = 'none';
+        if (window.innerWidth <= 600) {
+            const isNavbar = event.target.closest('.navbar');
+            const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
+            if (!isNavbar && !isMobileNavIcon && mobileNavOpened) {
+                document.querySelector('.navbar').style.display = 'none';
                 mobileNavIcon.style.color = 'black';
                 mobileNavOpened = false;
             }
-            event.stopPropagation();
-        });
+        }
     });
 
     mobileNavIcon.addEventListener('click', function(event) {
-        event.stopPropagation(); 
+        event.stopPropagation();
+        const navbar = document.querySelector('.navbar');
         if (!mobileNavOpened) {
             navbar.style.display = 'block'; 
             mobileNavIcon.style.color = 'white'; 
@@ -216,29 +227,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener('scroll', function() {
-        var mobileNavIcon = document.querySelector('.mobile-nav-icon');
-        if (window.scrollY > 50) { 
-            mobileNavIcon.style.display = 'none'; 
-        } else {
-            mobileNavIcon.style.display = 'block'; 
+        if (window.innerWidth <= 600) { 
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50 && !mobileNavOpened) { 
+                mobileNavIcon.style.display = 'none'; 
+            } else {
+                mobileNavIcon.style.display = 'block'; 
+            }
         }
     });
-
-    window.addEventListener('resize', function() {
-        const isMobileView = window.innerWidth <= 600;
-        if (!isMobileView) {
-            navbar.style.display = 'block'; 
-            mobileNavIcon.style.color = 'white';
-            mobileNavOpened = false;
-        }
-    });
-
-    const isMobileView = window.innerWidth <= 600;
-    if (isMobileView) {
-        navbar.style.display = 'none'; 
-        mobileNavIcon.style.color = 'black';
-    }
 });
+
+
     let selectedFileName = ""; 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -250,35 +250,6 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeContent();
     });
     navbarList.appendChild(homeListItem);
-    function generateListItems(files) {
-    const items = [];
-    files.forEach(filename => {
-        if (filename.endsWith('.md')) {
-            const listItem = document.createElement("li");
-            const icon = document.createElement("i");
-            icon.classList.add("fas", "fa-file");
-            const text = document.createTextNode(filename.split('/').pop().split('\\').pop().split('.')[0]); 
-            listItem.appendChild(icon);
-            listItem.appendChild(document.createTextNode(' '));
-            listItem.appendChild(text);
-            listItem.addEventListener("click", () => {
-                selectedFileName = filename.split('.')[0];
-                getContent(filename);
-                clearActiveStates();
-                const previousIcon = document.querySelector('.fa-chevron-right');
-                if (previousIcon) {
-                    previousIcon.classList.remove('fa-chevron-right');
-                    previousIcon.classList.add('fa-file');
-                }
-                icon.classList.remove('fa-file');
-                icon.classList.add('fa-chevron-right');
-            });
-
-            items.push(listItem);
-        }
-    });
-    return items;
-}
 
 
 function addListItemsToNav(ulElement, files) {
@@ -289,9 +260,9 @@ function addListItemsToNav(ulElement, files) {
         const listItem = document.createElement("li");
         const icon = document.createElement("i");
         icon.classList.add("fas", "fa-file");
-        const pureFileName = filename.split(/[\\/]+/).pop().split('.')[0]; 
- 
-        
+        const lastDotIndex = filename.lastIndexOf('.');
+        let pureFileName = filename.substring(filename.lastIndexOf('/') + 1, lastDotIndex);
+        pureFileName = pureFileName.substring(pureFileName.lastIndexOf('\\') + 1, lastDotIndex);
 
         const textNode = document.createTextNode(pureFileName); 
         listItem.appendChild(icon);
@@ -313,6 +284,7 @@ function addListItemsToNav(ulElement, files) {
         ulElement.appendChild(listItem);
     });
 }
+
 
 
     ['Tortenelem', 'Irodalom', 'Nyelvtan'].forEach(folder => {
@@ -386,41 +358,41 @@ function getContent(filename) {
         .catch(error => console.error('Hiba történt a fájl tartalmának lekérése közben:', error));
 }
 
-    function showAllItems() {
+function showAllItems() {
         
-    const contentDiv = document.getElementById("content");
-    contentDiv.innerHTML = `
-        <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
-        <p>Készítette: Stiegelmayer Bálint</p>`;
-
-    fetch(`/api/files`)
-        .then(response => response.json())
-        .then(data => {
-            let totalCount = 0; 
-            data.directories.forEach(directory => {
-                fetch(`/api/files/${encodeURIComponent(directory)}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.files.length > 0) {
-                            let count = 0; 
-                            contentDiv.innerHTML += `<h2>${directory}</h2>`;
-                            data.files.forEach(file => {
-                                if (file.endsWith('.md')) {
-                                    count++;
-                                    totalCount++;
-                                    const fileName = file.split('.')[0].split(/[\\/]+/).pop(); 
-                                    contentDiv.innerHTML += `<li style="font-size: 1.2rem; list-style: none; margin-left: 20px;"><i>${count}. ${fileName}</li>`;
-                                }
-                            });
-                            contentDiv.innerHTML += '</ul>';
-                        }
-                    })
-                    .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
-            });
-        })
-        .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
-}
-
+        const contentDiv = document.getElementById("content");
+        contentDiv.innerHTML = `
+            <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
+            <p>Készítette: Stiegelmayer Bálint</p>`;
+    
+        fetch(`/api/files`)
+            .then(response => response.json())
+            .then(data => {
+                let totalCount = 0; 
+                data.directories.forEach(directory => {
+                    fetch(`/api/files/${encodeURIComponent(directory)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.files.length > 0) {
+                                let count = 0; 
+                                contentDiv.innerHTML += `<h2>${directory}</h2>`;
+                                data.files.forEach(file => {
+                                    if (file.endsWith('.md')) {
+                                        count++;
+                                        totalCount++;
+                                        const fileName = file.split('/').pop().split('\\').pop().replace('.md', ''); 
+                                        contentDiv.innerHTML += `<li style="font-size: 1.2rem; list-style: none; margin-left: 20px;"><i>${count}. ${fileName}</li>`;
+                                    }
+                                });
+                                contentDiv.innerHTML += '</ul>';
+                            }
+                        })
+                        .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
+                });
+            })
+            .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
+    }
+    
 
     function toggleNightMode() {
         const body = document.body;
