@@ -87,24 +87,6 @@ p {
     }
 }
 
-.navbar {
-    padding-bottom: 50px;
-}
-
-@media only screen and (max-width: 600px) {
-    .navbar {
-        padding-bottom: 60px;
-    }
-}
-
-/* Hozzáadva a kód a toggle-nightmode megjelenítéséhez a mobilnézeten */
-body {
-    overflow-y: scroll;
-}
-
-body:not(.nightmode) .toggle-nightmode {
-    display: block;
-}
 
 .toggle-nightmode:hover {
     color: #000; 
@@ -139,6 +121,7 @@ body.nightmode .content {
 @media only screen and (max-width: 600px) {
     .navbar {
         display: none;
+   
     }
     .content {
         width: 100%; 
@@ -156,22 +139,21 @@ body.nightmode .content {
     }
 }
 .mobile-nav-icon {
-    display: none;
-    position: fixed;
-    top: 8px; 
-    left: 8px; 
+    position: absolute; 
+    top: 8px;
+    left: 8px;
     z-index: 9999;
     cursor: pointer;
 }
+
 
 @media only screen and (max-width: 600px) {
     .mobile-nav-icon {
         display: block;
     }
-    .navbar {
-        padding-top: 40px; /
-    }
+  
 }
+
     </style>
 </head>
 <body>
@@ -191,55 +173,46 @@ body.nightmode .content {
 </div>
 <div class="content" id="content"></div>
 <script>
-var mobileNavOpened = false;
-var isMobileView = window.innerWidth <= 600;
 document.addEventListener("DOMContentLoaded", function () {
-    var mobileNavIcon = document.querySelector('.mobile-nav-icon i');
+    var mobileNavIcon = document.querySelector('.mobile-nav-icon');
     var navbar = document.querySelector('.navbar');
+    navbar.style.overflow = 'scroll';
 
-    // Mobilnézetről váltás a rendes nézetre
     function switchToDesktopView() {
         navbar.style.display = 'block';
-        mobileNavIcon.style.color = 'black';
         mobileNavIcon.style.display = 'none';
     }
 
-    // Rendes nézetről váltás a mobilnézetre
     function switchToMobileView() {
-        if (mobileNavIcon.style.display === 'none') {
+        if (navbar.style.display !== 'block') {
             mobileNavIcon.style.display = 'block';
-            mobileNavIcon.style.color = 'white'; // A hamburger ikon alapértelmezett színe fehér
         }
     }
 
-    // Mobil nézetben a navbar megnyitása/zárása
     mobileNavIcon.addEventListener('click', function(event) {
         event.stopPropagation();
         if (window.innerWidth <= 600) {
             if (navbar.style.display === 'block') {
                 navbar.style.display = 'none';
-                mobileNavIcon.style.color = 'black';
+                mobileNavIcon.style.display = 'block';
             } else {
-                navbar.style.display = 'block'; 
-                mobileNavIcon.style.color = 'white'; 
+                navbar.style.display = 'block';
+                mobileNavIcon.style.display = 'none';
             }
         }
     });
 
-    // Amikor a felhasználó kattint egy helyre a dokumentumban, és a kattintás nem a navbar vagy a mobil ikon,
-    // akkor bezárjuk a mobil navbar-t
     document.addEventListener('click', function(event) {
         if (window.innerWidth <= 600) {
             const isNavbar = event.target.closest('.navbar');
             const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
             if (!isNavbar && !isMobileNavIcon && navbar.style.display === 'block') {
                 navbar.style.display = 'none';
-                mobileNavIcon.style.color = 'black';
+                mobileNavIcon.style.display = 'block';
             }
         }
     });
 
-    // Ha a felhasználó a mobilnézetből vált a rendes nézetre
     window.addEventListener('resize', function() {
         if (window.innerWidth > 600) {
             switchToDesktopView();
@@ -248,13 +221,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Inicializálás
     if (window.innerWidth <= 600) {
         switchToMobileView();
     } else {
         switchToDesktopView();
     }
 });
+
 
     let selectedFileName = ""; 
 
