@@ -1,4 +1,4 @@
-A Rákosi-korszak
+Rákosi-korszak (1945-1956)
 **Rakosi.jpg**
 Magyarország a második világháború végén ##szovjet megszállás## alá került, ami meghatározta a politikai erőviszonyokat. Bár az 1945-ös parlamenti választáson a Független Kisgazdapárt abszolút győzelmet aratott, szovjet nyomásra csak a baloldali pártokkal, a Magyar Kommunista Párttal, a Magyar Szociáldemokrata Párttal és a Nemzeti Parasztpárttal koalícióban alakíthatott kormányt. A belügyminiszteri pozíciót az ##MKP## kapta, a párt informátorai beépültek a többi pártba, ami lehetővé tette a koalíciós partnerek megfigyelését és kijátszását. A kommunisták az úgynevezett ##"szalámi taktika"## segítségével szorították ki a hatalomból politikai ellenfeleiket, és ##felszámolták a többpártrendszert.## 
 A két munkáspárt, az MKP és az MSZDP egyesülésével 1948. jún 12-én létrejött a Magyar Dolgozók Párta (MDP), melynek vezetője Rákosi Mátyás lett.
