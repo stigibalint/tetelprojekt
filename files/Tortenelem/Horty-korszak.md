@@ -1,4 +1,5 @@
 A Horthy-korszak (1920-1944)
+**horty.jpg**
 Ellenforradalom
 A tanácsköztársasággal szemben két ellenforradalmi központ szerveződött meg. Bécsben Bethlen István vezetésével jött létre az Antibolsevista Comité. Aradon Károlyi Gyula vezetésével egy ellenkormány alakult. A  két szervezet szegeden egyesült, ekkor lett Horthy Miklós a honvédelmi miniszter.
  A tanácsköztársaság bukása után román hadsereg megszállta az ország jelentős részét. A budapesti ideiglenes kormányok nem rendelkeztek valódi hatalommal. A hatalom megragadásához szükséges katonai erővel és diplomáciai támogatással egyedül Horthy Miklós rendelkezett. Az általa vezetett Nemzeti Hadsereg 1919 novemberében bevonult Budapestre, felváltva a kivonuló román hadsereget. Horthy önállósította magát, megszállta a Dél- Dunántúlt. Katonái a Tanácsköztársaság vörösterrorját megbosszulandó elindították a fehérterrort: törvénytelenül gyilkolták a kommunistákat. Az antant célja olyan kormány létrehozása volt, amelyik alá tudja írni a békeszerződést. 
