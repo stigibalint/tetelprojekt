@@ -21,6 +21,6 @@ Kádár: aki nincs ellenünk, az velünk van.
 &&tanácsi lakások: olcsón bérelhetők&&
 &&gépjárművek(pl Lada, trabant),telefonok megjelenése&&
 
-!!##1973-as olajrobbanást## visszaesés követte a világgazdaságban: szűkült termelés, energiaárak elemkedtek, a mezőgazdasági árak csökkentek. Ennek következtében romlott a magyar termékek cserearánya, megkezdődött a gazdaság hanyatlása. 
+!!##1973-as olajrobbanást## visszaesés követte a világgazdaságban: szűkült termelés, energiaárak emelkedtek, a mezőgazdasági árak csökkentek. Ennek következtében romlott a magyar termékek cserearánya, megkezdődött a gazdaság hanyatlása. 
 80-as évek: magyar gazdaság csak hitelekből tud működni.
 Magyarország belépett a nemzetközi pénzügyi intézményekbe (IMF, Világbank). Ez lehetővé tette, hogy az olajválságot követően hitelhez jusson. Egy ideig sikerült kölcsönökkel szinten tartani az életszínvonalat. Magyarország lett a "legvidámabb barakk", a gulyáskommunizmus országa.
