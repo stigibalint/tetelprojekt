@@ -1,4 +1,5 @@
 Kádár rendszer (1956-1989) 10. témakör 
+**Kadar.jpg**
 Az 1956-os szabadságharc leverése után Magyarország továbbra is a szovjet blokk tagja maradt. Az ország vezetője, az új állampárt, az ##MSZMP főtitkára,##
 Kádár János lett. Róla nevezték el a rendszerváltoztatásig, 1989-ig tartó időszakot Kádár-korszaknak.
 !!Bár több mint 30 év alatt jelentős változások történtek, a pártállami diktatúra fennmaradt: nem tartottak szabad választásokat, a döntések a párt központi vezetőségében születtek, így az országgyűlés szerepe formális volt. 
