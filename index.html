@@ -191,53 +191,70 @@ body.nightmode .content {
 </div>
 <div class="content" id="content"></div>
 <script>
-var navbar = document.querySelector('.navbar');
-var mobileNavIcon = document.querySelector('.mobile-nav-icon i');
 var mobileNavOpened = false;
 var isMobileView = window.innerWidth <= 600;
-
 document.addEventListener("DOMContentLoaded", function () {
     var mobileNavIcon = document.querySelector('.mobile-nav-icon i');
-    var mobileNavOpened = false;
+    var navbar = document.querySelector('.navbar');
 
+    // Mobilnézetről váltás a rendes nézetre
+    function switchToDesktopView() {
+        navbar.style.display = 'block';
+        mobileNavIcon.style.color = 'black';
+        mobileNavIcon.style.display = 'none';
+    }
+
+    // Rendes nézetről váltás a mobilnézetre
+    function switchToMobileView() {
+        if (mobileNavIcon.style.display === 'none') {
+            mobileNavIcon.style.display = 'block';
+            mobileNavIcon.style.color = 'white'; // A hamburger ikon alapértelmezett színe fehér
+        }
+    }
+
+    // Mobil nézetben a navbar megnyitása/zárása
+    mobileNavIcon.addEventListener('click', function(event) {
+        event.stopPropagation();
+        if (window.innerWidth <= 600) {
+            if (navbar.style.display === 'block') {
+                navbar.style.display = 'none';
+                mobileNavIcon.style.color = 'black';
+            } else {
+                navbar.style.display = 'block'; 
+                mobileNavIcon.style.color = 'white'; 
+            }
+        }
+    });
+
+    // Amikor a felhasználó kattint egy helyre a dokumentumban, és a kattintás nem a navbar vagy a mobil ikon,
+    // akkor bezárjuk a mobil navbar-t
     document.addEventListener('click', function(event) {
         if (window.innerWidth <= 600) {
             const isNavbar = event.target.closest('.navbar');
             const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
-            if (!isNavbar && !isMobileNavIcon && mobileNavOpened) {
-                document.querySelector('.navbar').style.display = 'none';
+            if (!isNavbar && !isMobileNavIcon && navbar.style.display === 'block') {
+                navbar.style.display = 'none';
                 mobileNavIcon.style.color = 'black';
-                mobileNavOpened = false;
             }
         }
     });
 
-    mobileNavIcon.addEventListener('click', function(event) {
-        event.stopPropagation();
-        const navbar = document.querySelector('.navbar');
-        if (!mobileNavOpened) {
-            navbar.style.display = 'block'; 
-            mobileNavIcon.style.color = 'white'; 
-            mobileNavOpened = true;
+    // Ha a felhasználó a mobilnézetből vált a rendes nézetre
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 600) {
+            switchToDesktopView();
         } else {
-            navbar.style.display = 'none';
-            mobileNavIcon.style.color = 'black'; 
-            mobileNavOpened = false;
+            switchToMobileView();
         }
     });
 
-    window.addEventListener('scroll', function() {
-        if (window.innerWidth <= 600) { 
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50 && !mobileNavOpened) { 
-                mobileNavIcon.style.display = 'none'; 
-            } else {
-                mobileNavIcon.style.display = 'block'; 
-            }
-        }
-    });
+    // Inicializálás
+    if (window.innerWidth <= 600) {
+        switchToMobileView();
+    } else {
+        switchToDesktopView();
+    }
 });
-
 
     let selectedFileName = ""; 
 
