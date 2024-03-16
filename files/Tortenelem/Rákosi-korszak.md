@@ -18,3 +18,34 @@ Az 1950-ben indított első ötéves terv célja- az államosítás mellett - a 
 &&1951-ben: be kellett vezetni a ##jegyrendszert.##&&
 A termelőszövetkezetek alakítása lassan haladt, aminek oka a középparaszt réteg ellenállása volt. Az ellenállás megtörésére az állam erőszakot alkalmazott.
 A parasztságnak teljesíthetetlen beszolgáltatási kötelezettségeket írtak elő, a kulákokat internálták, a falusi lakosságot megfélemlítették a ##"padlássöpréssel"##. Mindez a mezőgazdasági termelés csökkenéséhez és az élelmiszer-ellátás szintjének romlásához vezetett.
+
+@@Ismétlő kérdések - Quiz @@
+    ?? Hogyan alakult ki az egypártrendszer Magyarországon? ??
+        $- Az 1945-ös parlamenti választások eredményeként. -$
+       $$Az 1948. június 12-én létrejött Magyar Dolgozók Párta (MDP) kialakulásával. $$
+        $- A szabad választások révén. -$
+        $- A monarchia összeomlása után. -$
+
+   ?? Milyen intézkedést vezettek be 1950-ben a gazdaság területén? ??
+         $-Államosították az összes vállalatot. -$
+     $$A tervgazdálkodást vezették be. $$
+         $-Kiterjesztették a magántulajdon védelmét. -$
+         $-Bevezették az önkormányzatokat. -$
+
+    ?? Mi volt az 1950-ben indított első ötéves terv célja? ??
+   $$ Az államosítás mellett a magyar gazdaság újjászervezése és az ország szocialista iparosítása volt a cél.  $$
+         $-Az agrárszektor fejlesztése. -$
+         $-Az iparosítás elősegítése a hidegháború miatt. -$
+         $-Az egyházi intézmények modernizálása. -$
+
+  ??  Milyen intézkedést kellett bevezetni 1951-ben? ??
+    $$A jegyrendszert. $$
+         $-Az új közlekedési rendszert. -$
+         $-Az oktatási reformokat. -$
+         $-Az egészségügyi reformokat. -$
+
+    ?? Milyen módon próbálták megtörni a középparaszt réteg ellenállását a termelőszövetkezetek alakítása során? ?? 
+         $-Diplomatikus meggyőzéssel. -$
+         $-Ígéretekkel és juttatásokkal. -$
+         $-Állami támogatásokkal. -$
+       $$Az állam erőszakot alkalmazott. $$
