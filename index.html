@@ -37,7 +37,7 @@
     margin: 3px;
     color: #fff;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-style: italic;
 }
 
@@ -56,7 +56,7 @@
 
 p {
     margin: 2px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .tetel-lista {
@@ -66,7 +66,7 @@ p {
 
 .tetel-lista p {
     margin: 5px 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 .toggle-nightmode {
     position: fixed;
@@ -105,7 +105,7 @@ body.nightmode {
 
 
 .content li{
-    font-size: 18px;
+    font-size: 20px;
 }
 
 body.nightmode .content {
@@ -118,7 +118,7 @@ body.nightmode .content {
     color: #fff;
     cursor: pointer;
     border-bottom: 1px solid #555;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 @media only screen and (max-width: 600px) {
     .navbar {
@@ -131,7 +131,7 @@ body.nightmode .content {
         margin-left: 0; 
     }
     .navbar li {
-        font-size: 18px;
+        font-size: 19px;
     }
     #nav-tortenelem, #nav-irodalom, #nav-nyelvtan {
         font-size: 21px;
@@ -163,15 +163,16 @@ body.nightmode .content {
   
 }
 .question {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: bold;
     font-style: italic;
     margin-bottom: 10px;
-    color: #333; /* Fekete szöveg */
+    color: #333; 
 }
 
 .answer {
     margin-bottom: 5px;
+    font-size: 19px;
 }
 
 .answer input[type="radio"] {
@@ -183,12 +184,12 @@ body.nightmode .content {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    border: 2px solid #666; /* Szürke keret */
+    border: 2px solid #666; 
     outline: none;
 }
 
 .answer input[type="radio"]:checked {
-    background-color: #666; /* Kiválasztott gomb háttérszíne */
+    background-color: #666; 
 }
 
 .correct-answer {
@@ -229,7 +230,7 @@ body.nightmode .content {
 <div class="content" id="content"></div>
 <script>
     function openSearch() {
-    // Ide írd meg a keresési funkció megnyitását
+
     console.log("Keresés megnyitása");
 }
 
@@ -424,7 +425,7 @@ function getContent(filename) {
                     if (event.target === radioButton) {
                         const isCorrect = answerDiv.classList.contains('correct');
                         
-                        // Reset all answer colors to default
+                 
                         answerDivs.forEach(div => {
                             div.classList.remove('correct-answer');
                             div.classList.remove('wrong-answer');
@@ -455,16 +456,16 @@ function showAllItems() {
                 .then(data => {
                     if (data.files.length > 0) {
                         let count = 0;
-                        // Add icon and directory name
-                        const icons = ['fa-book', 'fa-pencil-alt', 'fa-landmark']; // Különböző ikonok
-                        contentDiv.innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 1px;"><i class="fas ${icons[index]}" style="margin: 10px 4px -8px 0px; font-size: 20px;"></i><h2 style="margin:20px 0px 0px 0px;">${directory}</h2></div>`;
+                   
+                        const icons = ['fa-book', 'fa-pencil-alt', 'fa-landmark'];
+                        contentDiv.innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 1px;"><i class="fas ${icons[index]}" style="margin: 10px 4px -8px 0px; font-size: 22px;"></i><h2 style="margin:20px 0px 0px 0px;">${directory}</h2></div>`;
                         contentDiv.innerHTML += '<ul style="margin-bottom: 5px;">';
                         data.files.forEach(file => {
                             if (file.endsWith('.md')) {
                                 count++;
                                 totalCount++;
                                 const fileName = file.split('/').pop().split('\\').pop().replace('.md', '');
-                                contentDiv.innerHTML += `<li style="font-size: 1.1rem; list-style: none; margin-left: 25px; margin-bottom: 2px;"><i class="fas fa-file-alt"></i> ${count}. ${fileName}</li>`;
+                                contentDiv.innerHTML += `<li style="font-size: 1.3rem; list-style: none; margin-left: 25px; margin-bottom: 2px;"><i class="fas fa-file-alt"></i> ${count}. ${fileName}</li>`;
                             }
                         });
                         contentDiv.innerHTML += '</ul>';
