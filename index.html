@@ -139,13 +139,17 @@ body.nightmode .content {
     }
 }
 .mobile-nav-icon {
-    position: absolute; 
+    position: absolute;
     top: 8px;
-    left: 8px;
+    right: 8px; /* Módosítás: jobbra helyezés */
     z-index: 9999;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Animáció hozzáadása */
 }
 
+.mobile-nav-icon.opened {
+    transform: rotate(90deg); /* Nyitott ikon pozíciója */
+}
 
 @media only screen and (max-width: 600px) {
     .mobile-nav-icon {
@@ -173,13 +177,13 @@ body.nightmode .content {
     appearance: none;
     width: 16px;
     height: 16px;
-    border-radius: 0; /* Négyzet alakú gombok */
+    border-radius: 50%;
     border: 2px solid #666; /* Szürke keret */
     outline: none;
 }
 
 .answer input[type="radio"]:checked {
-    background-color: #000000; /* Kiválasztott gomb háttérszíne */
+    background-color: #666; /* Kiválasztott gomb háttérszíne */
 }
 
 .correct-answer {
@@ -228,35 +232,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    mobileNavIcon.addEventListener('click', function(event) {
-        event.stopPropagation();
-        if (window.innerWidth <= 600) {
-            if (navbar.style.display === 'block') {
-                navbar.style.display = 'none';
-                mobileNavIcon.style.display = 'block';
-            } else {
-                navbar.style.display = 'block';
-                mobileNavIcon.style.display = 'none';
-            }
+mobileNavIcon.addEventListener('click', function(event) {
+    event.stopPropagation();
+    if (window.innerWidth <= 600) {
+        if (navbar.style.display === 'block') {
+            mobileNavIcon.classList.remove('opened');
+            navbar.style.display = 'none';
+           
+        } else {
+            mobileNavIcon.classList.add('opened'); 
+         
+            navbar.style.display = 'block';
+            
         }
-    });
+    }
+});
 
-    document.addEventListener('click', function(event) {
-        if (window.innerWidth <= 600) {
-            const isNavbar = event.target.closest('.navbar');
-            const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
-            if (!isNavbar && !isMobileNavIcon && navbar.style.display === 'block') {
-                navbar.style.display = 'none';
-                mobileNavIcon.style.display = 'block';
-            }
+document.addEventListener('click', function(event) {
+    if (window.innerWidth <= 600) {
+        const isNavbar = event.target.closest('.navbar');
+        const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
+        if (!isNavbar && !isMobileNavIcon && navbar.style.display === 'block') {
+            navbar.style.display = 'none';
+            mobileNavIcon.classList.remove('opened'); 
         }
-    });
+
+        if (isNavbar && mobileNavIcon.style.display !== 'block') {
+            mobileNavIcon.style.display = 'block';
+        }
+    }
+});
+
 
     window.addEventListener('resize', function() {
         if (window.innerWidth > 600) {
             switchToDesktopView();
         } else {
             switchToMobileView();
+            mobileNavIcon.style.display = 'block';
         }
     });
 
