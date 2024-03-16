@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Tételek</title>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
   body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin:15px;
     padding: 0;
     background-color: #f4f4f4;
     overflow-x: hidden; 
@@ -69,7 +70,7 @@ p {
 }
 .toggle-nightmode {
     position: fixed;
-    right: 10px; /* Jobb oldalra helyezés */
+    right: 10px; 
     color: #FFD700;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -79,6 +80,9 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+    body{
+        margin:6px;
+    }
     .toggle-nightmode {
         position: fixed;
         right: 10px;
@@ -141,14 +145,14 @@ body.nightmode .content {
 .mobile-nav-icon {
     position: absolute;
     top: 8px;
-    right: 8px; /* Módosítás: jobbra helyezés */
+    right: 8px; 
     z-index: 9999;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Animáció hozzáadása */
+    transition: transform 0.3s ease; 
 }
 
 .mobile-nav-icon.opened {
-    transform: rotate(90deg); /* Nyitott ikon pozíciója */
+    transform: rotate(90deg);
 }
 
 @media only screen and (max-width: 600px) {
@@ -196,7 +200,16 @@ body.nightmode .content {
     text-decoration: line-through;
 }
 
-
+.break{
+    background-color: #f4f4f4; 
+    width: 500%;
+    height: 1rem;
+    margin-left: -10rem;
+}
+div{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
     </style>
 </head>
 <body>
@@ -208,7 +221,14 @@ body.nightmode .content {
     <ul id="nav-nyelvtan"><i class="fas fa-folder"></i> Nyelvtan</ul> 
     <span class="toggle-nightmode" onclick="toggleNightMode()">
         <i class="fas fa-2x fa-moon"></i>
+        
     </span>
+    <span class="toggle-nightmode" onclick="toggleNightMode()">
+        <i class="fas fa-2x fa-moon"></i>
+    </span>
+    <!--<span class="search-icon" onclick="openSearch()">
+        <i class="fas fa-2x fa-search"></i>
+    </span> -->
     
 </nav>
 <div class="mobile-nav-icon">
@@ -216,6 +236,11 @@ body.nightmode .content {
 </div>
 <div class="content" id="content"></div>
 <script>
+    function openSearch() {
+    // Ide írd meg a keresési funkció megnyitását
+    console.log("Keresés megnyitása");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     var mobileNavIcon = document.querySelector('.mobile-nav-icon');
     var navbar = document.querySelector('.navbar');
@@ -344,7 +369,7 @@ function addListItemsToNav(ulElement, files) {
 function initializeContent() {
     document.getElementById("content").innerHTML = `
         <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
-        <p>Készítette: Stiegelmayer Bálint</p>
+
         <h2>Kidolgozott tételek:</h2>`;
        
         clearActiveStates(); 
@@ -388,11 +413,12 @@ function getContent(filename) {
             data = data.replace(/@@(.*?)@@/g, '<h2>$1</h2>');
             data = data.replace(/&&(.*?)&&/g, '<li>$1</li>');
             data = data.replace(/!!(.*?) /g, '<br>$1 ');
-            data = data.replace(/\*\*(.*?)\.jpg\*\*/g, '<img src="Kepek/$1.jpg" style="max-width: 200px; max-height: 200px;">');
 
+            data = data.replace(/\*\*(.*?)\.jpg\*\*/g, '<img src="Kepek/$1.jpg" style="max-width: 200px; max-height: 200px;">');
+   
 
             data = data.replace(/\?\?(.*?)\?\?/g, '<div class="question">$1</div>');
-            
+            data = data.replace(/\Ł(.*?)\Ł/g, '<div class="break">$1</div>');
             data = data.replace(/\$-(.*?)-\$/g, '<div class="answer"><input type="radio" name="answer" value="$1">$1</div>');
             data = data.replace(/\$\$(.*?)\$\$/g, '<div class="answer correct"><input type="radio" name="answer" value="$1">$1</div>');
 
@@ -428,8 +454,7 @@ function showAllItems() {
         
         const contentDiv = document.getElementById("content");
         contentDiv.innerHTML = `
-            <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
-            <p>Készítette: Stiegelmayer Bálint</p>`;
+            <h1>ÉRETTSÉGI TÉTELEK 2024</h1>`;
     
         fetch(`/api/files`)
             .then(response => response.json())
