@@ -157,6 +157,9 @@ body.nightmode .content {
     .mobile-nav-icon {
         display: block;
     }
+    body{
+        margin:6px;
+    }
   
 }
 .question {
@@ -438,41 +441,45 @@ function getContent(filename) {
         })
         .catch(error => console.error('Hiba történt a fájl tartalmának lekérése közben:', error));
 }
-
 function showAllItems() {
-        
-        const contentDiv = document.getElementById("content");
-        contentDiv.innerHTML = `
-            <h1>ÉRETTSÉGI TÉTELEK 2024</h1>`;
-    
+    const contentDiv = document.getElementById("content");
+    contentDiv.innerHTML = `
+        <h1>ÉRETTSÉGI TÉTELEK 2024</h1>`;
+
+
         fetch(`/api/files`)
-            .then(response => response.json())
-            .then(data => {
-                let totalCount = 0; 
-                data.directories.forEach(directory => {
-                    fetch(`/api/files/${encodeURIComponent(directory)}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.files.length > 0) {
-                                let count = 0; 
-                                contentDiv.innerHTML += `<h2>${directory}</h2>`;
-                                data.files.forEach(file => {
-                                    if (file.endsWith('.md')) {
-                                        count++;
-                                        totalCount++;
-                                        const fileName = file.split('/').pop().split('\\').pop().replace('.md', ''); 
-                                        contentDiv.innerHTML += `<li style="font-size: 1.2rem; list-style: none; margin-left: 20px;"><i>${count}. ${fileName}</li>`;
-                                    }
-                                });
-                                contentDiv.innerHTML += '</ul>';
+    .then(response => response.json())
+    .then(data => {
+        let totalCount = 0;
+        data.directories.forEach((directory, index) => {
+            fetch(`/api/files/${encodeURIComponent(directory)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.files.length > 0) {
+                        let count = 0;
+                        // Add icon and directory name
+                        const icons = ['fa-book', 'fa-pencil-alt', 'fa-landmark']; // Különböző ikonok
+                        contentDiv.innerHTML += `<div style="display: flex; align-items: center;"><i class="fas ${icons[index]}" style="margin-right: 10px; font-size: 24px;"></i><h2>${directory}</h2></div>`;
+                        contentDiv.innerHTML += '<ul>';
+                        data.files.forEach(file => {
+                            if (file.endsWith('.md')) {
+                                count++;
+                                totalCount++;
+                                const fileName = file.split('/').pop().split('\\').pop().replace('.md', '');
+                                contentDiv.innerHTML += `<li style="font-size: 1.2rem; list-style: none; margin-left: 30px;"><i class="fas fa-file-alt"></i> ${count}. ${fileName}</li>`;
                             }
-                        })
-                        .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
-                });
-            })
-            .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
-    }
-    
+                        });
+                        contentDiv.innerHTML += '</ul>';
+                    }
+                })
+                .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
+        });
+    })
+    .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
+
+
+}
+
 
     function toggleNightMode() {
         const body = document.body;
