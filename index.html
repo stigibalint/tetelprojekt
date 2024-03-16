@@ -80,9 +80,7 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-    body{
-        margin:6px;
-    }
+  
     .toggle-nightmode {
         position: fixed;
         right: 10px;
@@ -200,16 +198,7 @@ body.nightmode .content {
     text-decoration: line-through;
 }
 
-.break{
-    background-color: #f4f4f4; 
-    width: 500%;
-    height: 1rem;
-    margin-left: -10rem;
-}
-div{
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
+
     </style>
 </head>
 <body>
@@ -418,7 +407,7 @@ function getContent(filename) {
    
 
             data = data.replace(/\?\?(.*?)\?\?/g, '<div class="question">$1</div>');
-            data = data.replace(/\Ł(.*?)\Ł/g, '<div class="break">$1</div>');
+ 
             data = data.replace(/\$-(.*?)-\$/g, '<div class="answer"><input type="radio" name="answer" value="$1">$1</div>');
             data = data.replace(/\$\$(.*?)\$\$/g, '<div class="answer correct"><input type="radio" name="answer" value="$1">$1</div>');
 
