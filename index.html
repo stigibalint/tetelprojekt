@@ -153,6 +153,45 @@ body.nightmode .content {
     }
   
 }
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #333; /* Fekete szöveg */
+}
+
+.answer {
+    margin-bottom: 5px;
+}
+
+.answer input[type="radio"] {
+    margin-right: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 0; /* Négyzet alakú gombok */
+    border: 2px solid #666; /* Szürke keret */
+    outline: none;
+}
+
+.answer input[type="radio"]:checked {
+    background-color: #000000; /* Kiválasztott gomb háttérszíne */
+}
+
+.correct-answer {
+    color: green;
+    font-weight: bold;
+}
+
+.wrong-answer {
+    color: red;
+    text-decoration: line-through;
+}
+
 
     </style>
 </head>
@@ -338,12 +377,36 @@ function getContent(filename) {
             data = data.replace(/!!(.*?) /g, '<br>$1 ');
             data = data.replace(/\*\*(.*?)\.jpg\*\*/g, '<img src="Kepek/$1.jpg" style="max-width: 200px; max-height: 200px;">');
 
+
+            data = data.replace(/\?\?(.*?)\?\?/g, '<div class="question">$1</div>');
+            
+            data = data.replace(/\$-(.*?)-\$/g, '<div class="answer"><input type="radio" name="answer" value="$1">$1</div>');
+            data = data.replace(/\$\$(.*?)\$\$/g, '<div class="answer correct"><input type="radio" name="answer" value="$1">$1</div>');
+
             const contentDiv = document.getElementById("content");
             contentDiv.innerHTML = data;
 
+            const answerDivs = contentDiv.querySelectorAll('.answer');
+            answerDivs.forEach(answerDiv => {
+                const radioButton = answerDiv.querySelector('input[type="radio"]');
+                answerDiv.addEventListener('click', (event) => {
+                    if (event.target === radioButton) {
+                        const isCorrect = answerDiv.classList.contains('correct');
+                        
+                        // Reset all answer colors to default
+                        answerDivs.forEach(div => {
+                            div.classList.remove('correct-answer');
+                            div.classList.remove('wrong-answer');
+                        });
 
-
-
+                        if (isCorrect) {
+                            answerDiv.classList.add('correct-answer');
+                        } else {
+                            answerDiv.classList.add('wrong-answer');
+                        }
+                    }
+                });
+            });
         })
         .catch(error => console.error('Hiba történt a fájl tartalmának lekérése közben:', error));
 }
