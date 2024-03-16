@@ -445,8 +445,6 @@ function showAllItems() {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = `
         <h1>ÉRETTSÉGI TÉTELEK 2024</h1>`;
-
-
         fetch(`/api/files`)
     .then(response => response.json())
     .then(data => {
@@ -459,14 +457,14 @@ function showAllItems() {
                         let count = 0;
                         // Add icon and directory name
                         const icons = ['fa-book', 'fa-pencil-alt', 'fa-landmark']; // Különböző ikonok
-                        contentDiv.innerHTML += `<div style="display: flex; align-items: center;"><i class="fas ${icons[index]}" style="margin-right: 10px; font-size: 24px;"></i><h2>${directory}</h2></div>`;
-                        contentDiv.innerHTML += '<ul>';
+                        contentDiv.innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 1px;"><i class="fas ${icons[index]}" style="margin: 10px 4px -8px 0px; font-size: 20px;"></i><h2 style="margin:20px 0px 0px 0px;">${directory}</h2></div>`;
+                        contentDiv.innerHTML += '<ul style="margin-bottom: 5px;">';
                         data.files.forEach(file => {
                             if (file.endsWith('.md')) {
                                 count++;
                                 totalCount++;
                                 const fileName = file.split('/').pop().split('\\').pop().replace('.md', '');
-                                contentDiv.innerHTML += `<li style="font-size: 1.2rem; list-style: none; margin-left: 30px;"><i class="fas fa-file-alt"></i> ${count}. ${fileName}</li>`;
+                                contentDiv.innerHTML += `<li style="font-size: 1.1rem; list-style: none; margin-left: 25px; margin-bottom: 2px;"><i class="fas fa-file-alt"></i> ${count}. ${fileName}</li>`;
                             }
                         });
                         contentDiv.innerHTML += '</ul>';
@@ -476,6 +474,8 @@ function showAllItems() {
         });
     })
     .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
+
+
 
 
 }
