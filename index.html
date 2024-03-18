@@ -220,23 +220,51 @@ footer p{
     font-size: 1.2rem;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 120%;
+  background-color: #f1f1f1;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #011b12;
+  width: 0%;
+}
+  
+}
+
+
+
     </style>
 </head>
 <body>
-
+    <div class="header">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+      </div>
 <nav class="navbar">
     <ul id="navbar-list"></ul>
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
     <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
     <ul id="nav-nyelvtan"><i class="fas fa-folder"></i> Nyelvtan</ul> 
 
-    <!--    <span class="toggle-nightmode" onclick="toggleNightMode()">
-        <i class="fas fa-2x fa-moon"></i>
+<!--   <span class="toggle-nightmode" onclick="toggleNightMode()">
+        <i class="fas fa-2x fa-moon"></i> -->  
         
 
-   <span class="search-icon" onclick="openSearch()">
-        <i class="fas fa-2x fa-search"></i>
-    </span> -->
     
 </nav>
 <div class="mobile-nav-icon">
@@ -249,10 +277,14 @@ footer p{
     </div>
 </footer>
 <script>
-    function openSearch() {
+window.onscroll = function() {myFunction()};
 
-    console.log("Keresés megnyitása");
-}
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+} 
 
 document.addEventListener("DOMContentLoaded", function () {
     var mobileNavIcon = document.querySelector('.mobile-nav-icon');
