@@ -569,12 +569,7 @@ function showAllItems() {
                     .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error))
                     .finally(() => {
               
-                        if (index === data.directories.length - 1) {
-                            contentDiv.innerHTML += `
-                                <div style="margin-top: 20px;">
-                                    <p style="font-size: 1.2rem;font-weight: bold; margin-top: 10px;">Tételek száma: ${totalCount}</p>
-                                </div>`;
-                        }
+                    
 
                     });
             });
