@@ -18,7 +18,7 @@
 .navbar {
     width: 210px;
     height: 100%;
-    background-color: #333;
+    background-color: #CC2B46;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,6 +26,17 @@
     animation: floatIn 0.4s ease;
   
 }
+
+
+.navbar:first-of-type ul:first-of-type {
+    background-color: #B6263D;
+    margin-top: -3px;
+    padding: 10px;
+    font-weight: bolder;
+    font-style: normal;
+}
+
+
 @keyframes floatIn {
     0% {
         opacity: 0;
@@ -39,8 +50,9 @@
 .navbar ul {
     list-style-type: none;
     padding: 0;
-    border-bottom: 1px solid #555; 
+    font-weight: bold;
     font-style: normal; 
+
 }
 
 .navbar li {
@@ -49,11 +61,13 @@
     color: #fff;
     cursor: pointer;
     font-size: 1.3rem;
+    font-weight: normal;
     font-style: italic;
 }
 
 .navbar li:hover {
-    background-color: #555;
+    background-color: #161616;
+    opacity: 0.7;
     border-bottom: none; 
 }
 
@@ -61,7 +75,7 @@
     margin-left: 220px;
     padding: 20px;
     background-color: #fff;
-    border: 1px solid #ccc;
+
     border-radius: 5px;
   
     
@@ -128,11 +142,14 @@ body.nightmode .content {
 }
 
 #nav-tortenelem, #nav-irodalom, #nav-nyelvtan {
-    padding: 10px;
+    margin: 20px 0px 20px 0px;
     color: #fff;
     cursor: pointer;
-    border-bottom: 1px solid #555;
+    border-bottom: 2px solid #B6263D;
     font-size: 1.5rem;
+}
+#nav-nyelvtan{
+    border-bottom: none;
 }
 @media only screen and (max-width: 600px) {
     .navbar {
@@ -253,7 +270,7 @@ footer p{
 
 .progress-bar {
   height: 8px;
-  background: #6d6e6e;
+  background: #861225;
   width: 0%;
 }
   
@@ -512,40 +529,41 @@ function showAllItems() {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = `
         <h1>ÉRETTSÉGI TÉTELEK 2024</h1>`;
-        fetch(`/api/files`)
-    .then(response => response.json())
-    .then(data => {
-        let totalCount = 0;
-        data.directories.forEach((directory, index) => {
-            fetch(`/api/files/${encodeURIComponent(directory)}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.files.length > 0) {
-                        let count = 0;
-                   
-                        const icons = ['fa-book', 'fa-pencil-alt', 'fa-landmark'];
-                        contentDiv.innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 1px;"><i class="fas ${icons[index]}" style="margin: 10px 4px -8px 0px; font-size: 22px;"></i><h2 style="margin:20px 0px 0px 0px;">${directory}</h2></div>`;
-                        contentDiv.innerHTML += '<ul style="margin-bottom: 5px;">';
-                        data.files.forEach(file => {
-                            if (file.endsWith('.md')) {
-                                count++;
-                                totalCount++;
-                                const fileName = file.split('/').pop().split('\\').pop().replace('.md', '');
-                                contentDiv.innerHTML += `<li style="font-size: 1.3rem; list-style: none; margin-left: 25px; margin-bottom: 2px;"><i class="fas fa-file-alt"></i> ${count}. ${fileName}</li>`;
-                            }
-                        });
-                        contentDiv.innerHTML += '</ul>';
-                    }
-                })
-                .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
-        });
-    })
-    .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
+    fetch(`/api/files`)
+        .then(response => response.json())
+        .then(data => {
+            let totalCount = 0;
+            data.directories.forEach((directory, index) => {
+                fetch(`/api/files/${encodeURIComponent(directory)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.files.length > 0) {
+                            let count = 0;
 
-
-
-
+                            const icons = [
+                                { icon: 'fa-book', color: '#8A1946' }, // Például a 'fa-book' ikon kék lesz
+                                { icon: 'fa-pencil-alt', color: '#8A1946' }, // Például a 'fa-pencil-alt' ikon zöld lesz
+                                { icon: 'fa-landmark', color: '#8A1946' } // Például a 'fa-landmark' ikon piros lesz
+                            ];
+                            contentDiv.innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 1px;"><i class="fas ${icons[index].icon}" style="margin: 10px 4px -8px 0px; font-size: 22px; color: ${icons[index].color};"></i><h2 style="margin:20px 0px 0px 0px;">${directory}</h2></div>`;
+                            contentDiv.innerHTML += '<ul style="margin-bottom: 5px;">';
+                            data.files.forEach(file => {
+                                if (file.endsWith('.md')) {
+                                    count++;
+                                    totalCount++;
+                                    const fileName = file.split('/').pop().split('\\').pop().replace('.md', '');
+                                    contentDiv.innerHTML += `<li style="font-size: 1.3rem; list-style: none; margin-left: 25px; margin-bottom: 2px;"><i class="fas fa-file-alt" style="color: ${icons[index].color};"></i> ${count}. ${fileName}</li>`;
+                                }
+                            });
+                            contentDiv.innerHTML += '</ul>';
+                        }
+                    })
+                    .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
+            });
+        })
+        .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
 }
+
 
 
  /*   function toggleNightMode() {
