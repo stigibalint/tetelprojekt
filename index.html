@@ -142,7 +142,7 @@ body.nightmode .content {
 }
 
 #nav-tortenelem, #nav-irodalom, #nav-nyelvtan {
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 10px;
     color: #fff;
     cursor: pointer;
     border-bottom: 2px solid #B6263D;
@@ -288,6 +288,7 @@ footer p{
       </div>
 <nav class="navbar">
     <ul id="navbar-list"></ul>
+
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
     <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
     <ul id="nav-nyelvtan"><i class="fas fa-folder"></i> Nyelvtan</ul> 
@@ -540,29 +541,50 @@ function showAllItems() {
                         if (data.files.length > 0) {
                             let count = 0;
 
-                            const icons = [
-                                { icon: 'fa-book', color: '#8A1946' }, // Például a 'fa-book' ikon kék lesz
-                                { icon: 'fa-pencil-alt', color: '#8A1946' }, // Például a 'fa-pencil-alt' ikon zöld lesz
-                                { icon: 'fa-landmark', color: '#8A1946' } // Például a 'fa-landmark' ikon piros lesz
+                            // Képek helyett
+                            const images = [
+                                { src: 'Kepek/book.png', width: '32px', height: '32px' },
+                                { src: 'Kepek/chalkboard.png', width: '32px', height: '32px' },
+                                { src: 'Kepek/writing.png', width: '32px', height: '32px' }
                             ];
-                            contentDiv.innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 1px;"><i class="fas ${icons[index].icon}" style="margin: 10px 4px -8px 0px; font-size: 22px; color: ${icons[index].color};"></i><h2 style="margin:20px 0px 0px 0px;">${directory}</h2></div>`;
+
+                            let displayDirectory = directory;
+                            if (directory === "Tortenelem") {
+                                displayDirectory = "Történelem";
+                            }
+
+                            contentDiv.innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 1px;"><img src="${images[index].src}" style="margin: 10px 4px -8px 0px; width: ${images[index].width}; height: ${images[index].height};"></img><h2 style="margin:20px 0px 0px 0px;">${displayDirectory}</h2></div>`;
                             contentDiv.innerHTML += '<ul style="margin-bottom: 5px;">';
                             data.files.forEach(file => {
                                 if (file.endsWith('.md')) {
                                     count++;
                                     totalCount++;
                                     const fileName = file.split('/').pop().split('\\').pop().replace('.md', '');
-                                    contentDiv.innerHTML += `<li style="font-size: 1.3rem; list-style: none; margin-left: 25px; margin-bottom: 2px;"><i class="fas fa-file-alt" style="color: ${icons[index].color};"></i> ${count}. ${fileName}</li>`;
+                                    contentDiv.innerHTML += `<li style="font-size: 1.3rem; list-style: none; margin-left: 25px; margin-bottom: 2px;"> ${count}. ${fileName}</li>`;
                                 }
                             });
                             contentDiv.innerHTML += '</ul>';
                         }
                     })
-                    .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error));
+                    .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error))
+                    .finally(() => {
+              
+                        if (index === data.directories.length - 1) {
+                            contentDiv.innerHTML += `
+                                <div style="margin-top: 20px;">
+                                    <p style="font-size: 1.2rem;font-weight: bold; margin-top: 10px;">Tételek száma: ${totalCount}</p>
+                                </div>`;
+                        }
+
+                    });
             });
         })
         .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
 }
+
+
+
+
 
 
 
