@@ -37,11 +37,6 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 }
-.navbar:first-of-type ul:first-of-type:hover {
-
-color: white;
-}
-
 
 @keyframes floatIn {
     0% {
@@ -178,11 +173,10 @@ body.nightmode .content {
     }
 }
 
-@media only screen and (max-width: 600px) {
+
     #nav-nyelvtan li:last-child {
-        margin-bottom: 5rem; 
-    }
-}
+        margin-bottom: 5rem; }
+ 
 
 .mobile-nav-icon {
     position: absolute;
@@ -317,12 +311,14 @@ footer p{
 <div class="mobile-nav-icon">
     <i class="fas fa-bars fa-2x"></i>
 </div>
+
 <div class="content" id="content">
-    
+   
 </div>
 <footer>
     <div>
        <p> 2024 ÉRETTSÉGI TÉTELEK</p>
+
     </div>
 </footer>
 <script>
@@ -410,7 +406,7 @@ document.addEventListener('click', function(event) {
     const homeListItem = createNavItem("Kezdőlap", () => {
         initializeContent();
     });
-    homeListItem.style.fontSize = "1.6rem";
+    homeListItem.style.fontSize = "1.7rem";
     homeListItem.style.fontStyle = "normal";
     homeListItem.style.transition = "color 0.3s ease"; 
     homeListItem.onmouseover = function() {
@@ -564,6 +560,7 @@ function showAllItems() {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = `
         <h1>ÉRETTSÉGI TÉTELEK 2024</h1>`;
+        
     fetch(`/api/files`)
         .then(response => response.json())
         .then(data => {
@@ -597,8 +594,12 @@ function showAllItems() {
                                 }
                             });
                             contentDiv.innerHTML += '</ul>';
+                            
                         }
+                        
                     })
+
+                    
                     .catch(error => console.error(`Hiba történt a ${directory} mappa lekérdezése közben:`, error))
                     .finally(() => {
               
@@ -608,11 +609,10 @@ function showAllItems() {
             });
         })
         .catch(error => console.error('Hiba történt a mappák lekérdezése közben:', error));
+
+   
+
 }
-
-
-
-
 
 
 
