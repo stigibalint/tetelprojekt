@@ -1,1 +1,0 @@
-Petőfi Sándor - Apostol
