@@ -56,7 +56,7 @@
 }
 
 .navbar li {
-    padding: 10px 10px; 
+    padding: 9px; 
     margin: 3px;
     color: #fff;
     cursor: pointer;
@@ -171,6 +171,13 @@ body.nightmode .content {
         overflow-y: initial; 
     }
 }
+
+@media only screen and (max-width: 600px) {
+    #nav-nyelvtan li:last-child {
+        margin-bottom: 70px; /* Adjunk hozzá egy nagyobb margin-t az utolsó li elem alá */
+    }
+}
+
 .mobile-nav-icon {
     position: absolute;
     top: 8px;
@@ -193,6 +200,7 @@ body.nightmode .content {
     }
   
 }
+
 .question {
     font-size: 21px;
     font-weight: bold;
@@ -286,12 +294,12 @@ footer p{
           <div class="progress-bar" id="myBar"></div>
         </div>
       </div>
-<nav class="navbar">
+<nav class="navbar" >
     <ul id="navbar-list"></ul>
 
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
     <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
-    <ul id="nav-nyelvtan"><i class="fas fa-folder"></i> Nyelvtan</ul> 
+    <ul id="nav-nyelvtan" ><i class="fas fa-folder"></i> Nyelvtan</ul> 
 
 <!--   <span class="toggle-nightmode" onclick="toggleNightMode()">
         <i class="fas fa-2x fa-moon"></i> -->  
@@ -541,7 +549,6 @@ function showAllItems() {
                         if (data.files.length > 0) {
                             let count = 0;
 
-                            // Képek helyett
                             const images = [
                                 { src: 'Kepek/book.png', width: '32px', height: '32px' },
                                 { src: 'Kepek/chalkboard.png', width: '32px', height: '32px' },
