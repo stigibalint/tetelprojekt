@@ -284,8 +284,6 @@ footer p{
   
 }
 
-
-
     </style>
 </head>
 <body>
@@ -301,12 +299,8 @@ footer p{
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
     <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
     <ul id="nav-nyelvtan" ><i class="fas fa-folder"></i> Nyelvtan</ul> 
-
 <!--   <span class="toggle-nightmode" onclick="toggleNightMode()">
         <i class="fas fa-2x fa-moon"></i> -->  
-        
-
-    
 </nav>
 <div class="mobile-nav-icon">
     <i class="fas fa-bars fa-2x"></i>
@@ -480,7 +474,6 @@ function initializeContent() {
 
 
 function createNavItem(label, clickHandler) {
-    
     const listItem = document.createElement("li");
     listItem.style.fontWeight = "bold";
     listItem.style.fontSize = "1.4rem";
@@ -488,8 +481,11 @@ function createNavItem(label, clickHandler) {
     listItem.addEventListener("click", () => {
         clearActiveStates(); 
         clickHandler();
-    
-
+        const previousIcon = document.querySelector('.fa-chevron-right');
+        if (previousIcon) {
+            previousIcon.classList.remove('fa-chevron-right');
+            previousIcon.classList.add('fa-file');
+        }
     });
     return listItem;
 }
