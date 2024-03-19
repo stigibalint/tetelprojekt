@@ -37,6 +37,10 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 }
+.navbar:first-of-type ul:first-of-type:hover {
+
+color: white;
+}
 
 
 @keyframes floatIn {
@@ -408,6 +412,15 @@ document.addEventListener('click', function(event) {
     });
     homeListItem.style.fontSize = "1.6rem";
     homeListItem.style.fontStyle = "normal";
+    homeListItem.style.transition = "color 0.3s ease"; 
+    homeListItem.onmouseover = function() {
+        this.style.color = "white";
+    };
+
+    homeListItem.onmouseleave = function() {
+        this.style.color = "#161920";
+    };
+
     homeListItem.style.color = "#161920";
     navbarList.appendChild(homeListItem);
 
