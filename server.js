@@ -62,8 +62,23 @@ app.get('/api/files/:folder', (req, res) => {
     });
 });
 
+
+app.get('/api/fogalmak/:fileName', (req, res) => {
+    const fileName = req.params.fileName;
+    const filePath = path.join(filesPath, 'Fogalmak', fileName);
+
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).send({ error: 'Unable to read the file.' });
+        } else {
+            res.send(data);
+        }
+    });
+});
+
+
 app.get('/api/files', (_req, res) => {
-    // Használjuk a korábban definiált getDirectories függvényt
+
     const directories = getDirectories(filesPath);
     res.json({ directories });
 });
