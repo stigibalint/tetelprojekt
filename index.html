@@ -362,7 +362,7 @@ footer p{
     background-color: transparent;
     border: none;
     font-size: 40px;
-    color: #00A19A;
+    color: #EA7E36;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -371,7 +371,7 @@ footer p{
     transform: scale(1.3);
 }
 #closeButton{
-        margin-right: 1rem;
+        margin-right: 0.1rem;
     }
 @media only screen and (max-width: 900px) {
 
@@ -428,17 +428,35 @@ footer p{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
  
     overflow-y: scroll;
-    margin-left: 0;
     
 }
-
-#allConcepts p {
-    margin-left: 0;
+#allConcepts li {
+    list-style-type: none;
+    padding: 20px;
+    margin: 5px 8px 5px -30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
+
+
 #allConcepts h2 {
     margin-left: 20px;
 }
 
+#searchIcon {
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    color: #EA7E36; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#searchIcon:hover {
+    transform: scale(1.3);
+}
 
 
     </style>
@@ -456,8 +474,6 @@ footer p{
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
     <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
     <ul id="nav-nyelvtan" ><i class="fas fa-folder"></i> Nyelvtan</ul> 
-<!--   <span class="toggle-nightmode" onclick="toggleNightMode()">
-        <i class="fas fa-2x fa-moon"></i> -->  
 </nav>
 <div class="mobile-nav-icon">
     <i class="fas fa-bars fa-2x"></i>
@@ -473,6 +489,11 @@ footer p{
 
 <div id="overlay" onclick="hideOverlay()">
     <button id="closeButton">X</button>
+    <div id="searchIcon" style="margin-right: 0.5rem; display: none;" >
+        <i class="fas fa-search fa-2x" style="cursor: pointer;"></i>
+    
+
+    </div>
     <div id="contentWrapper" >
 
         <div class="box" onclick="showBigBox('Irodalom')">Irodalom
@@ -504,9 +525,41 @@ footer p{
 </footer>
 <script>
     
+document.getElementById("searchIcon").addEventListener("click", function(event) {
+    event.stopPropagation();
+    const searchTerm = prompt("Keresendő szó:");
+    if (searchTerm !== null && searchTerm.trim() !== "") {
+        searchContent(searchTerm);
+    }
+});
+
+function searchContent(searchTerm) {
+    const contentDiv = document.getElementById("allConcepts");
+    const lis = contentDiv.querySelectorAll("li");
+
+    let firstFoundIndex = -1; 
+    lis.forEach((li, index) => {
+        li.style.backgroundColor = "";
+        if (li.textContent.toLowerCase().includes(searchTerm)) { 
+            if (firstFoundIndex === -1) {
+                firstFoundIndex = index;
+            }
+            li.style.backgroundColor = "yellow";
+        }
+    });
+    
+    if (firstFoundIndex !== -1) {
+        
+        lis[firstFoundIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+    
+        alert("Nincs találat.");
+    }
+}
     function showOverlay() {
         document.getElementById("overlay").style.display = "block";
         document.getElementById("contentWrapper").style.display = "flex";
+        document.getElementById("searchIcon").style.display = "none";
     }
 
     function hideOverlay(event) {
@@ -514,6 +567,8 @@ footer p{
         document.getElementById("overlay").style.display = "none";
         document.getElementById("contentWrapper").style.display = "none";
         document.getElementById("allConcepts").style.display = "none";
+        document.getElementById("searchIcon").style.display = "none";
+        
     }
 }
 
@@ -522,6 +577,7 @@ document.getElementById("closeButton").addEventListener("click", hideOverlay);
     document.getElementById("overlay").addEventListener("click", hideOverlay);
     function showBigBox(folder) {
     document.getElementById("allConcepts").style.display = "flex";
+    document.getElementById("searchIcon").style.display = "block";
     document.getElementById("contentWrapper").style.display = "none";
 
     let fileToLoad;
@@ -539,28 +595,38 @@ document.getElementById("closeButton").addEventListener("click", hideOverlay);
             console.error('Ismeretlen mappa:', folder);
             return;
     }
+fetch(`/api/fogalmak/${fileToLoad}`)
+    .then(response => response.text())
+    .then(data => {
 
-    fetch(`/api/fogalmak/${fileToLoad}`)
-        .then(response => response.text())
-        .then(data => {
-    
-            const lines = data.split('\n');
-            const firstLine = lines.shift(); 
-            const formattedFirstLine = `<h2>${firstLine}</h2>`;
+        const lines = data.split('\n');
+        const firstLine = lines.shift();
+        const formattedFirstLine = `<h2>${firstLine}</h2>`;
+
+        let listItems = lines.map(line => {
+            if (line.trim() === '') return ''; 
+
+            let words = line.split(' '); 
+            let formattedLine = '';
+            words.forEach(word => {
             
-    
-            const listItems = lines.map(line => {
-                if (line.trim() === '') {
-                    return ''; 
+                if (word.includes(':')) {
+                    formattedLine += `<b>${word}</b> `;
                 } else {
-                    return `<li>${line}</li>`;
+                    formattedLine += `${word} `;
                 }
-            }).join('');
-            
-            // Az összeállított tartalom megjelenítése
-            document.getElementById("allConcepts").innerHTML = `<div>${formattedFirstLine}<ul>${listItems}</ul></div>`;
-        })
-        .catch(error => console.error('Hiba történt a fogalmak lekérése közben:', error));
+            });
+            return `<li>${formattedLine.trim()}</li>`;
+        }).join('');
+
+        document.getElementById("allConcepts").innerHTML = `<div>${formattedFirstLine}<ul>${listItems}</ul></div>`;
+    })
+    .catch(error => console.error('Hiba történt a fogalmak lekérése közben:', error));
+
+
+
+
+
 }
 
 
@@ -637,7 +703,6 @@ document.addEventListener('click', function(event) {
     }
 });
 
-
     let selectedFileName = ""; 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -696,8 +761,6 @@ function addListItemsToNav(ulElement, files) {
     });
 }
 
-
-
     ['Tortenelem', 'Irodalom', 'Nyelvtan'].forEach(folder => {
         fetch(`/api/files/${encodeURIComponent(folder)}`)
             .then(response => response.json())
@@ -713,9 +776,7 @@ function addListItemsToNav(ulElement, files) {
 function initializeContent() {
     document.getElementById("content").innerHTML = `
         <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
-
         <h2>Kidolgozott tételek:</h2>`;
-       
         clearActiveStates(); 
         showAllItems();
 }
@@ -770,12 +831,6 @@ function getContent(filename) {
 
             const contentDiv = document.getElementById("content");
             contentDiv.innerHTML = data;
-
-
-
-
-
-            
             const answerDivs = contentDiv.querySelectorAll('.answer');
             answerDivs.forEach(answerDiv => {
                 const radioButton = answerDiv.querySelector('input[type="radio"]');
@@ -857,25 +912,6 @@ function showAllItems() {
    
 
 }
-
-
-
- /*   function toggleNightMode() {
-        const body = document.body;
-        const navbar = document.querySelector('.navbar');
-        const nightModeIcon = document.querySelector('.toggle-nightmode i');
-
-        if (body.classList.contains('nightmode')) {
-            body.classList.remove('nightmode');
-            navbar.style.backgroundColor = '#333';
-            nightModeIcon.style.color = '#FFD700'; 
-        } else {
-            body.classList.add('nightmode');
-            navbar.style.backgroundColor = '#222';
-            nightModeIcon.style.color = '#000'; 
-        }
-    }
-    */
 </script>
 
 
