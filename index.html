@@ -456,6 +456,8 @@ footer p{
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
     <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
     <ul id="nav-nyelvtan" ><i class="fas fa-folder"></i> Nyelvtan</ul> 
+<!--   <span class="toggle-nightmode" onclick="toggleNightMode()">
+        <i class="fas fa-2x fa-moon"></i> -->  
 </nav>
 <div class="mobile-nav-icon">
     <i class="fas fa-bars fa-2x"></i>
@@ -555,6 +557,7 @@ document.getElementById("closeButton").addEventListener("click", hideOverlay);
                 }
             }).join('');
             
+            // Az összeállított tartalom megjelenítése
             document.getElementById("allConcepts").innerHTML = `<div>${formattedFirstLine}<ul>${listItems}</ul></div>`;
         })
         .catch(error => console.error('Hiba történt a fogalmak lekérése közben:', error));
@@ -634,6 +637,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
+
     let selectedFileName = ""; 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -692,6 +696,8 @@ function addListItemsToNav(ulElement, files) {
     });
 }
 
+
+
     ['Tortenelem', 'Irodalom', 'Nyelvtan'].forEach(folder => {
         fetch(`/api/files/${encodeURIComponent(folder)}`)
             .then(response => response.json())
@@ -707,7 +713,9 @@ function addListItemsToNav(ulElement, files) {
 function initializeContent() {
     document.getElementById("content").innerHTML = `
         <h1>ÉRETTSÉGI TÉTELEK 2024</h1>
+
         <h2>Kidolgozott tételek:</h2>`;
+       
         clearActiveStates(); 
         showAllItems();
 }
@@ -762,6 +770,12 @@ function getContent(filename) {
 
             const contentDiv = document.getElementById("content");
             contentDiv.innerHTML = data;
+
+
+
+
+
+            
             const answerDivs = contentDiv.querySelectorAll('.answer');
             answerDivs.forEach(answerDiv => {
                 const radioButton = answerDiv.querySelector('input[type="radio"]');
@@ -843,6 +857,25 @@ function showAllItems() {
    
 
 }
+
+
+
+ /*   function toggleNightMode() {
+        const body = document.body;
+        const navbar = document.querySelector('.navbar');
+        const nightModeIcon = document.querySelector('.toggle-nightmode i');
+
+        if (body.classList.contains('nightmode')) {
+            body.classList.remove('nightmode');
+            navbar.style.backgroundColor = '#333';
+            nightModeIcon.style.color = '#FFD700'; 
+        } else {
+            body.classList.add('nightmode');
+            navbar.style.backgroundColor = '#222';
+            nightModeIcon.style.color = '#000'; 
+        }
+    }
+    */
 </script>
 
 
