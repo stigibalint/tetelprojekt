@@ -549,13 +549,12 @@ function searchContent(searchTerm) {
     });
     
     if (firstFoundIndex !== -1) {
-        
         lis[firstFoundIndex].scrollIntoView({ behavior: "smooth", block: "center" });
     } else {
-    
         alert("Nincs találat.");
     }
 }
+
     function showOverlay() {
         document.getElementById("overlay").style.display = "block";
         document.getElementById("contentWrapper").style.display = "flex";
