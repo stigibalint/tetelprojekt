@@ -47,7 +47,7 @@ Szabadalmi Törvény (A találmányokat le lehetett védedtettni)
 
 Találmányok: Fonó-jenny (James Hargreaves), Öszvér, Gőzgép (James Watt), Gőzhajó(Fulton), Gőzmozdon(Stephenson)
 
-Húzoágazatok: Textilipar, Közlekedés(Gőzhajo, vasút), Vaskohászat, Bányászat
+Húzoágazatok: Textilipar, Közlekedés(Gőzhajó, vasút), Vaskohászat, Bányászat
 
 Nyersanyagok: Szén, fa, vasérc, gőz
 
