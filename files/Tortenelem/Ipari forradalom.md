@@ -41,14 +41,14 @@ Kiindulópont: Anglia
 Bekeritések -> angol jobbágyok -> szabad polgár
 
 Textilipar
-- gyarmatositas -> nyersanyag
-- 1688-89 alkotmanyos monarhia -> feudalizmus felbomlik -> Polgári társadalom
+- gyarmatosítás -> nyersanyag
+- 1688-89 alkotmányos monarchia -> feudalizmus felbomlik -> Polgári társadalom
 - Szabadalmi Törvény (A találmányokat le lehetett védedtettni)
 
 
 Találmányok: Fonó-jenny (James Hargreaves), Öszvér, Gőzgép (James Watt), Gőzhajó(Fulton), Gőzmozdon(Stephenson)
 
-Huzoagazatok: Textilipar, Közlekedés(Gözhajo, vasut), Vaskohászat, Bányászat
+Húzoágazatok: Textilipar, Közlekedés(Gőzhajo, vasút), Vaskohászat, Bányászat
 
 Nyersanyagok: Szén, fa, vasérc, gőz
 
