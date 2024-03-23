@@ -52,9 +52,9 @@ Huzoagazatok: Textilipar, Közlekedés(Gözhajo, vasut), Vaskohászat, Bányász
 
 Nyersanyagok: Szén, fa, vasérc, gőz
 
-Manufakturak helyett gyárak alakultak ki
+Manufakturák helyett gyárak alakultak ki
 
-manufaktura -> kézzel elvégzett munkafolyamat
+manufaktúra -> kézzel elvégzett munkafolyamat
 gyár -> gépek általi gyártásfolyamat
 
 Munkásosztály
@@ -89,7 +89,7 @@ Az első ipari forradalomhoz kapcsolódó további jellemzők:
 --Találmányok:--
 
 - Otto motor
-- repulo (wright fiverek)
+- repulő (wright fiverek)
 - Telefon (Bell)
 - Telefonkozpont (Puskas Tivadar)
 - Dinamit (Nobel)
@@ -104,15 +104,6 @@ Az első ipari forradalomhoz kapcsolódó további jellemzők:
 --Huzalágazatok:--
 - Vegyipar
 - Gépgyártás
-
-
---Nyersanyagok:--
-- Áram
-- Kőolaj
-- Földgáz
-- Gumi
-- Alumínium
-- Acél
 
 --Jellemzők:--
 - A futószalag és az óriásüzemek elterjedése.
