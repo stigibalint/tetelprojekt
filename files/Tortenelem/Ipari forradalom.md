@@ -2,7 +2,7 @@ Az ipari forradalom első hulláma
 
 Ipari forradalomnak azt a történelmi fordulatot nevezik, amikor megkezdődött a tőke és a munkaerő átáramlása a mezőgazdaságbor megkezdo fölgyosult a munkafolyamatok gépesítése, és ennek kö vetkeztében az ipari termelés növekedése folyamatosan meghalad vetkeztezőgazdaságét. Ez a változás Angliában történt meg először a 18. század utolsó harmadában. Az iparosodás azóta állandó jalenség. Minden újabb szakaszát ugrásszerű technológiai fejlődés és jelentős társadalmi átalakulás jelzi.
 Az iparosodásnak Nagy-Britanniában minden más országénál kedvezőbb feltételei voltak. A 18. század első felében a mező gazdasági termelést modernizálták: egyes munkafolyamatokat gé pesítettek (pl. cséplés), új technológiákat vezettek be (pl. vetés- forgó), és a bekerítések során tagosították a földeket. Ezzel lezajlott a mezőgazdaság tőkés átalakulása. Kevesebb ember, nagyobb haszonnal, több élelem előállítására volt képes, így rendelkezésre állt az ipar számára szükséges munkaerő és tőke. A gyarmatbirodalom és a gazdagodó társadalmi rétegek kereslete állandó piacot biztosított az iparcikkeknek. A vállalkozások a bankoktól kérhettek hitelt. Az iparosodást elősegítette a gépekhez szükséges nyersanyagok bősége is: Nagy-Britannia jelentős szén- és vasérckészletekkel rendelkezett.
-2 Az ipar átalakulása hamarosan Nyugat-Európában és Észak- Amerikában is megkezdődött. A változás először mindenütt a kisebb tőkeigényű könnyűiparban indult el. A textilipar gépesítése, a fo- nógépek és mechanikus szövőszékek alkalmazása hatékonyabbá tette a munkát, ami további újításokra ösztönözte a vállalkozókat. Így egyre több és olcsóbb terméket állítottak elő. Az alacsony ár miatti élénk kereslet a termelés folyamatos bővítéséhez vezetett.
+Az ipar átalakulása hamarosan Nyugat-Európában és Észak- Amerikában is megkezdődött. A változás először mindenütt a kisebb tőkeigényű könnyűiparban indult el. A textilipar gépesítése, a fo- nógépek és mechanikus szövőszékek alkalmazása hatékonyabbá tette a munkát, ami további újításokra ösztönözte a vállalkozókat. Így egyre több és olcsóbb terméket állítottak elő. Az alacsony ár miatti élénk kereslet a termelés folyamatos bővítéséhez vezetett.
 A további növekedéshez új energiaforrásra volt szükség. Miu- tán James Watt 1769-ben megalkotta az általánosan használható
 
 gőzgépet, megkezdődhetett a gőzenergia ipari alkalmazása. Ennek következtében a hagyományos háziipart és a kézműipart felváltotta a gépesített termelés. Ezzel új üzemforma jött létre: a gyár.
@@ -11,18 +11,18 @@ Az árumennyiség növekedése megkövetelte a közlekedés fejlesz- tését. Cs
 sodás hatására a 19. század első felében Európa-szerte és az USA- ban vasútépítési láz tört ki, vasúton ugyanis óriási mennyiségű árut lehetett gyorsan és pontosan szállítani. A vonat a személyszállítást is felgyorsította. A vasúti forgalom növekedése élénkítette a gazdaságot, mivel könnyebb volt elérni a piacokat és a nyersanyaglelőhelyeket.
 
 A gőzgépek alkalmazása, a vasúti sínek, kocsik gyártása nagy mennyiségű vas és szén bányászatát ösztönözte, valamint folyamatos és nagy értékű megrendeléseket jelentett a vasipar számára. A vas felhasználásának kiterjesztését Abraham Darby alapozta meg azzal, hogy a kőszén kokszosításával kiváltotta a faszenet. A technológia fejlődése révén egyre jobb minőségű alapanyagot állítottak elő, a fém- megmunkálásban az esztergapad alkalmazása lehetővé tette a precí- zebb fémgépek és alkatrészek gyártását, továbbá a szabványosítást.
-4 Az iparosodással fölgyorsult a környezetpusztítás. A bánya- feltárások és a vaskohászat az erdők pusztulását okozták; az ipar el- szennyezte a levegőt, az élővizeket. Emiatt a városi lakosság körében hiánybetegségek alakultak ki. Az iparosodás hatása a nagyfokú urbanizáció. Iparvárosok jöttek létre, de átalakult a régi városok szerkezete is. A központban elegáns bank és üzleti negyed, a vá- rosok peremén ipari övezet alakult ki. A gyárak közelében jöttek létre a munkások szegregált lakónegyedei: szűk utcákkal, zsúfolt bérka- szárnyákkal, egészségtelen lakásokkal.
+Az iparosodással fölgyorsult a környezetpusztítás. A bánya- feltárások és a vaskohászat az erdők pusztulását okozták; az ipar el- szennyezte a levegőt, az élővizeket. Emiatt a városi lakosság körében hiánybetegségek alakultak ki. Az iparosodás hatása a nagyfokú urbanizáció. Iparvárosok jöttek létre, de átalakult a régi városok szerkezete is. A központban elegáns bank és üzleti negyed, a vá- rosok peremén ipari övezet alakult ki. A gyárak közelében jöttek létre a munkások szegregált lakónegyedei: szűk utcákkal, zsúfolt bérka- szárnyákkal, egészségtelen lakásokkal.
 Az ipar fejlődése következtében gyorsan nőtt a gyári munkások száma, köztük sok volt a nő és a gyermek. Napi 12-14 órát dol- goztak egészségtelen munkakörülmények között, nyomorúságos bé- rért. A kizsákmányolás ellen kezdetben nem tudtak védekezni. Helyzetük Angliában a 19. század első felében a munkásmozgalom eredményeként fokozatosan javult, 1844-ben megszülettek a gyári törvények, amelyek korlátozták a női és a gyermekmunkát, szabá- lyozták a munkaidőt. A fejletlenebb régiókban ez csak évtizedekkel később valósult meg.
 
-Az iparosodás újabb szakasza (1.)
-Az ipari forradalom a 18. század utolsó harmadában kezdődött Angliában. A gőzgépek és a gyárak lehetővé tették a tömegter- melést és átalakították a szállítást. Ez a folyamat idézte elő a gaz- dasági szerkezet átalakulását: megkezdődött a tőke és a munkaerő áramlása az iparba, az ipar növekedése tartósan meghaladta a mező- gazdaságét, így az ipar vált vezető ágazattá. Az iparosodás azóta is folyamatosan zajlik, amelynek újabb szakasza az 1870-es évek- ben kezdődött Angliában és az USA-ban, illetve ekkor bontakozott ki Németországban. Ezt a szakaszt is új energiaforrások elterjedése, ugrásszerű technológiai fejlődés és jelentős gazdasági-társadalmi vál- tozás jellemezte.✓✓
+@@Az Ipari forradalom II. hulláma @@
+Az ipari forradalom a 18. század utolsó harmadában kezdődött Angliában. A gőzgépek és a gyárak lehetővé tették a tömegter- melést és átalakították a szállítást. Ez a folyamat idézte elő a gaz- dasági szerkezet átalakulását: megkezdődött a tőke és a munkaerő áramlása az iparba, az ipar növekedése tartósan meghaladta a mező- gazdaságét, így az ipar vált vezető ágazattá. Az iparosodás azóta is folyamatosan zajlik, amelynek újabb szakasza az 1870-es évek- ben kezdődött Angliában és az USA-ban, illetve ekkor bontakozott ki Németországban. Ezt a szakaszt is új energiaforrások elterjedése, ugrásszerű technológiai fejlődés és jelentős gazdasági-társadalmi vál- tozás jellemezte.
 
-2 A vasat a 19. század végén már nemcsak gépekhez, hanem épü- letekhez is használták; az első acélszerkezetes építmény az Eiffel- torony volt, amely a technikai újításokat bemutató világkiállításra készült. A kohászat gyors ütemben fejlődött: a Martin-Siemens-ke- mencében magas minőségű acélt állítottak elő. Ennek felhasználása javította a szerszámok, gépek, sínek minőségét is.
+A vasat a 19. század végén már nemcsak gépekhez, hanem épü- letekhez is használták; az első acélszerkezetes építmény az Eiffel- torony volt, amely a technikai újításokat bemutató világkiállításra készült. A kohászat gyors ütemben fejlődött: a Martin-Siemens-ke- mencében magas minőségű acélt állítottak elő. Ennek felhasználása javította a szerszámok, gépek, sínek minőségét is.
 A technikai újítások közül kiemelkedik a gőzgépnél sokkal jobb hatásfokú belső égésű motor (Otto), amelyhez üzemanyagként a kőolajból lepárlással előállított benzint használták. Ezzel a kőszén mellett új energiahordozó jelent meg. A kis méretű erőgép felhasz- nálásával német mérnökök építették meg az autómobilt (Benz), amelyet az amerikai Henry Ford cége a futószalagos munkaszervezés eredményeként már tömegesen gyártott (T-modell). A könnyű belső E égésű motort építették be a léghajóba (Zeppelin) és a repülőgépbe (Wright testvérek) is. Ezek a találmányok teremtették meg a mára mindennapivá vált légiközlekedés alapjait.
 
 Új energiaforrás volt az elektromosság is. Az egyenáramot előállító dinamót Jedlik Ányos alkotta meg. A budapesti Ganz gyár- ban kifejlesztett generátor váltóáramot termelt, a transzformátor a villamos energia továbbítását tette lehetővé. Az amerikai Thomas Edison feltalálta a szénszálas villamos izzót. A hírközlés új esz- közei, a telefon, a távíró és a rádió is árammal működtek, ahogy a szórakoztatást szolgáló mozi és a fonográf is. Az elektromos áram átalakította a mindennapokat, ipari előállítása és széles körű alkal- mazása ezért tekinthető az iparosodás legnagyobb hatású eredmé- nyének.
 
-3 A közlekedés átalakulása a gépgyártást és az acélipart ösztö- nözte folyamatos fejlesztésre. A kőolaj feldolgozása létrehozta a mo- dern vegyipart, amely az élet számos területén használt anyago- kat állított elő: fellendült a gumi-, üveg-, műanyag-, alumínium-,
+A közlekedés átalakulása a gépgyártást és az acélipart ösztö- nözte folyamatos fejlesztésre. A kőolaj feldolgozása létrehozta a mo- dern vegyipart, amely az élet számos területén használt anyago- kat állított elő: fellendült a gumi-, üveg-, műanyag-, alumínium-,
 műtrágya- és gyógyszergyártás. A mezőgazdasági termékek nagy mennyisége és a gyors népességnövekedés megteremtette az élel- miszeripart is.
 
 A hatalmi konfliktusok ösztönözték az 1880-as évek hadiipari találmányait, ekkor jött létre a korábban elképzelhetetlenül hatásos fegyver, a Maxim-géppuska. A bányászatban, építkezéseken hasz- nált dinamit robbanóerejét többszörösére növelték, a hernyótalpas traktor páncélozva harckocsi lett, a katonai igények fölgyorsították a repülőgép, a telefon és a rádiózás fejlesztését is.
@@ -89,14 +89,14 @@ Az első ipari forradalomhoz kapcsolódó további jellemzők:
 --Találmányok:--
 
 - Otto motor
-- repulő (wright fiverek)
-- Telefon (Bell)
-- Telefonkozpont (Puskas Tivadar)
-- Dinamit (Nobel)
+- repülő (Wright fivérek)
+- Telefon (Alexander Graham Bell)
+- Telefonközpont (Puskás Tivadar)
+- Dinamit (Alfred Bernhard Nobel)
 - Léghajó
 - Hengerszék (Mechwart)
 - Rádió, Mozgókép
-- Elektromosság, Izzó (edison)
+- Elektromosság, Izzó (Thomas Alva Edison)
 
 --Nyersanyagok:--
 - Áram, Kőolaj, földgáz, gumi, aluminium, acél
@@ -111,3 +111,37 @@ Az első ipari forradalomhoz kapcsolódó további jellemzők:
 - A tőke egyre nagyobb mértékben került a bankok kezébe, pl. Rockefeller család.
 - Megjelenik a tőzsde, ahol a nagy tőkeigényű vállalatok finanszírozására szolgáló tőke gyűlt össze.
 - A vegyipar és a gépgyártás vált jelentőssé.
+@@Quiz@@
+
+??Mi jellemzte az ipari forradalomat Angliában? ??
+$- Mezőgazdaság volt a húzóágazat -$
+$$ A gépesített termelés növekedése $$
+$- A hagyományos kézműipar virágzása -$
+$- A városokban élők számának csökkenése -$
+
+   ?? Ki találta fel a telefonközpontot? ??
+$- Puskás Tivadar-$
+$$ Alexander Graham Bell$$
+$- Alfred Bernhard Nobel-$
+$- Thomas Alva Edison-$
+
+
+   ?? Melyik találmány segítette elő a gőzenergia ipari alkalmazását? ??
+$- Szénkitermelő gép -$
+$- Gőzhajó -$
+$$ Gőzgép $$
+$- Szénbányászati technológia -$
+
+
+   ?? Mikor kezdődött az iparosodás újabb szakasza Angliában és az USA-ban? ??
+$- Az 1850-es években -$
+$- A 16. században -$
+$- A 19. század első felében -$
+$$ Az 1870-es években $$
+
+
+   ?? Melyik találmány volt az első acélszerkezetes építmény? ??
+$$ Az Eiffel-torony $$
+$- Az angol parlament -$
+$- Az autó -$
+$- A Wright testvérek repülőgépe -$
