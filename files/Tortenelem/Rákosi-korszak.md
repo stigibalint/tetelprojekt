@@ -30,7 +30,7 @@ A parasztságnak teljesíthetetlen beszolgáltatási kötelezettségeket írtak 
          $-Államosították az összes vállalatot. -$
      $$A tervgazdálkodást vezették be. $$
          $-Kiterjesztették a magántulajdon védelmét. -$
-         $-Bevezették az önkormányzatokat. -$
+         $-Bevezették az önkormányzatokat. -$ 
 
     ?? Mi volt az 1950-ben indított első ötéves terv célja? ??
    $$ Az államosítás mellett a magyar gazdaság újjászervezése és az ország szocialista iparosítása volt a cél.  $$
