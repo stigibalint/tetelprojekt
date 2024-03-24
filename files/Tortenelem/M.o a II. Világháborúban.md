@@ -10,7 +10,7 @@ Az 1940 augusztus 30-i második bécsi döntés: Észak-Erdélyt és a Székelyf
 A második bécsi döntés a Németország melletti elköteleződést erősítette. A semlegesség hangoztatása ellenére, a parlament elfogadta a második zsidó törvényt.
 1941: Teleki öngyilkos lesz.
 1941 június 26-án ##légitámadás Kassa térségében##, ismeretlen felségjelű, de orosznak gondolt gépek bombáztak. -> Casus belly (háborús ok)
-A kormányzó 1941 június 27-én kinyilvánította a hadiállapotot a Szovjetunióval, és ezt a Bárdossy-kormány és a parlament jóváhagyta.
+1941 június 27-én Az incidensről értesülve Horthy Miklós kormányzó, Bárdossy László magyar miniszterelnök még aznap, alaposabb vizsgálat nélkül bejelentette a hadiállapot beálltát a Szovjetunióval.
 
 -- Hadseregek --
 Gyorshadtest: kb 50.000 főből álló motorizált hadsereg.
@@ -24,3 +24,42 @@ Horty kiugrási kísérlet: elhibázott kísérlet volt -> letartóztatják -> S
 &&Budapest ostroma december-februárig.&&
 &&Tavaszi ébredés: kitörési kísérlet.&&
 &&1945 április 4-én elfoglalják a szovjetek az országot.&&
+
+??Melyik magyar hadsereghez tartozó katonai egység szenvedett súlyos veszteségeket a 1943 január 12-i szovjet támadás során a Don-kanyarban? ??
+
+$- Gyorshadtest -$
+$$ II. magyar hadsereg $$
+$- Teleki hadsereg -$
+$- Horty sereg -$
+
+
+??Melyik évben került sor a második bécsi döntésre, amelynek eredményeként Észak-Erdélyt és a Székelyföldet visszacsatolták Magyarországhoz? ??
+
+$- 1936 -$
+$- 1938 -$
+$$ 1940 $$
+$- 1941 -$
+
+??Az első bécsi döntés értelmében Magyarország visszakapta: ??
+
+$$ Kárpátalja déli sávját és Felvidéket $$
+$- Észak-Erdélyt és Székelyföldet -$
+$- Bácska keleti részét -$
+$- Muraközt -$
+
+??Ki volt Magyarország miniszterelnöke az 1941 június 26-i légitámadás idején? ??
+
+$- Simonyi-Semadam Sándor -$
+$- Teleki Pál -$
+$$ Bárdossy László $$
+$- Horty Miklós -$
+
+
+??Mi volt a Margaréta hadművelet? ??
+$- Az I. világháború alatt egy brit-francia hadművelet során a német megszállás alatt álló területek felszabadítása volt a cél. A hadművelet során jelentős német erőket sikerült visszaszorítani, és számos katonai objektumot visszafoglaltak a szövetséges erők. -$
+
+$$ Az I. világháború idején, 1944 nyarán Magyarországot megszállták a németek. A hadművelet során mintegy 200.000 zsidót deportáltak a megszállt területekről. $$
+
+$- Az I. világháború idején egy orosz támadás során a német megszállás alatt álló területek ellen intéztek offenzívát. A Margaréta hadművelet eredményeként az orosz csapatok jelentős területet tudtak visszafoglalni a németektől. -$
+
+$- Nem volt ilyen nevű hadművelet -$
