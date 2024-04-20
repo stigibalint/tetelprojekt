@@ -312,3 +312,57 @@ A szó eredeti értelme valósághűség. Célja a jelenségek minél valóságh
     az író mindentudó és a háttérben marad
 
 Képviselői: Mikszáth, Móricz, Jókai, Csehov, Ibsen, Tolsztoj, Dosztojevszkij, Turgenyev, Balzac, Stendhal.
+
+!!
+@@Műnemek, műfajok, verstípusok, egyéb műfajelméleti fogalmak@@
+
+!!##novella:## kisepikai műfaj.  Részletezés nélküli, egy szálon futó történet, csak néhány szereplőt vonultat fel, jellegzetes eleme a váratlan fordulat, a mely a kifejletet előkészíti. (Pl. Boccaccio, Mikszáth, Móricz).
+
+!!##elbeszélő költemény:## verses epikai műfaj, Magyarországon a romantika korában lett népszerű. Szoros kapcsolatot tart az eposszal (Arany: Toldi – a kor emberideálját testesíti meg), esetenként a meséhez közelít (Petőfi: János vitéz).
+
+!!##regény:## nagyepikai, többnyire prózában írott műfaj. A regény cselekménye szerteágazó, időszerkezete lineáris, elbeszélője általában kívülálló. Számos változata, típusa létezik, pl. családregény, fejlődésregény, életrajzi regény, lélektani regény, történelmi regény, karrierregény, detektívregény, tézisregény.
+
+!!##dráma:## a három irodalmi műnem egyike. Színpadon előadható eseménysort ábrázol, a szereplők jellemét, gondolatait, egymáshoz való viszonyát dialógusaikból, monológjaikból és tetteikből ismerhetjük meg. Formailag párbeszédes. Két fő változata a tragédia és a komédia.
+
+!!##tragédia:## olyan történet, melyben hirtelen értékveszteség, értékpusztulás következik be. A cselekmény szintjén ez a kiemelkedő hős halálában vagy lelki összeomlásában nyilvánul meg. Bukása a félelem és együttérzés érzelmeit váltja ki a nézőből (katarzis). Pl. Szophoklész: Antigoné.
+
+!!##komédia:## értékhiánnyal indul, és ennek az értéknek a hiánya nevetést vált ki a nézőből. A komikus hatást a bizonyos emberi hibák nevetségessé tétele (jellemkomikum), vagy a színpadi szituációkban rejlő félreértések, az ábrázolt élethelyzet humora (helyzetkomikum) váltja ki. Pl. Moliere: Tartuffe.
+
+!!##drámai költemény (emberiség-dráma):## olyan drámai alkotás, amely a dráma alapvető formai követelményeit betartja (párbeszédek, konfliktusok, jelenetek – tehát színpadi előadásra alkalmas), de a cselekménynél fontosabb a filozófiai mondanivaló (inkább olvasással fogadható be). Mindig az emberiséget foglalkoztató legsúlyosabb kérdések állnak a középpontjában (miért élünk, mi dolgunk a világon stb). Pl. Madách: Az ember tragédiája című műve.
+
+!!##analitikus dráma:## drámatípus, amelyben a cselekmény egy korábbi történetet derít fel – pontosabban a konfliktust kirobbantó esemény tragédia jelen idejéhez képest a múltban történt. Klasszikus példája Szophoklész Oidipusz királya, később Ibsen alkalmazta ezt a módszert (A vadkacsa, Nóra).
+
+!!##dal:## élményeken alapuló lírai műfaj. Egyszerű érzelmet tisztán, közvetlenül kifejező, kisebb terjedelmű, kerek szerkezetű, egységes hangnemű költemény. Tárgyköre változatos, jellegzetes csoportjai: bordal, hazafias dal, szerelmi dal stb. Pl: Csokonai: Egy tulipánthoz, Petőfi: Fa leszek, ha...,
+
+!!##elégia:## görög eredetű lírai műfaj, fájdalmas tárgyról, kiengesztelődött hangon szóló költeményt jelent. Elsősorban a hangneméről lehet felismerni: nosztalgikus, lemondó, vágyakozó és fájdalmas, a hiányt fejezi ki. Pl. Berzsenyi: A közelítő tél.
+
+!!##himnusz:## görög eredetű lírai műfaj, az óda alfaja, valamely istenséghez fordul magasztos hangnemben. Felépítése: 1. az istenség megszólítása, körülírása, 2. kérés 3. előző tetteinek magasztalása, 4. a kérés megismétlése. Ez a szerkezet felismerhető Szapphó: Aphroditéhez c. himnuszában ugyanúgy, mint Kölcsey művében, nemzeti himnuszunkban.
+
+!!##epigramma:## görög eredetű műfaj, eredetileg disztichonban írt sírfelirat, később egy fontos gondolat rövid, rendszerint csattanóval végződő megfogalmazása. Az ókorban a legnevesebb epigrammaköltő Szimonidész.
+
+!!##ballada:## eredetileg ősi népköltészeti műfaj, mely az epikai, lírai és drámai műnem határterületén helyezkedik el.. Rendszerint tragikus témát dolgoz fel; szaggatott párbeszédek váltják a lírai monológokat és a lényeges dolgokat kihagyó, ám sejthető epikus részeket (balladai homály). Jellegzetes népballadai témák: a mennybement leány (Júlia, szép leány), az egymástól eltiltott szerelmesek (Görög Ilona), a megesett lány stb. A romantika korában ezt az ősi műfajt műballada formájában élesztik újra. Arany János nagy gondot fordított a lélektani indokoltságra, különösen a megőrülés folyamata foglalkoztatta. (Ágnes asszony).
+
+!!##apokalipszis:## az ókori irodalom műfaja (bizonyos irodalomelméletek nem tartják műfajnak), a Bibliai Jelenések könyvéről kapta a nevét. Egy múltba helyezett személy szájába adja a jövendölést a jelenről, vagy a jelenben szól a várható jövőről. Apokaliptikusnak nevezzük azokat a műveket, amelyek a világ végső eseménysorát mutatják be látomásos formában.
+
+!!##A hármas egység elve:## Az elv magyarázata, hogy az ókori görög színház felépítéséből adódóan nem tudták a tér és az idő változását jelezni. A klasszicizmus korában kötelező elvvé tették. Eszerint a dráma 24 óra alatt, egy helyszínen játszódik, a cselekménye egy szálon fut.
+
+!!##A dráma öt része:## A drámák, de különösképp a tragédiák felépítésében az alábbi részek különíthetők el:
+
+    szituáció: a szereplők és viszonyaik bemutatása
+    bonyodalom: megváltozik a fennálló rend
+    konfliktus: a szereplők fizikai vagy szóbeli összeütközései, vagy a főhős vívódása
+    (késleltetés: a beteljesedés előtt gyakran olyan esemény történik, amely elodázza a tetőpont bekövetkeztét. Célja a feszültségkeltés).
+    tetőpont: a bonyodalmak és a konfliktus beteljesedése (a tragédiákban a tragikus eset)
+    megoldás: visszaáll a megszokott (vagy viszonylagos) rend.
+
+!!##ars poetica:## „ a költészet mestersége”. Tágabb értelemben minden olyan alkotást ide sorolunk, amely a költői szerepről, a költészetnek a világban betöltött helyéről, a helyes költői felfogásról szól (pl. Horatius: Ars poetica). Szűkebb értelemben egy adott költő saját költői szerepértelmezését jelenti (Petőfi: A természet vadvirága, Radnóti: Első ecloga).
+
+!!##időszembesítő verstípus:## a múlt és jelen értékbeli összevetésén alapuló költemény, amelynek mérlege a pozitív múlt javára dől el a negatív jelen ellenében. A romantika korában népszerű (pl. Berzsenyi: A magyarokhoz (Romlásnak indult…), Kölcsey: Zrínyi dala, Hymnus)
+
+!!##létösszegző verstípus:## a költő egy adott korszakában -többnyire válsághelyzetben értelmezi addigi életét és szerepét: egy életszakasz lezárása, ahol ennek a szakasznak a megítélése többnyire negatív, önkritikus, önironikus. Pl.: Arany: Epilogus, Kosztolányi: Boldog, szomorú dal, József A: Kész a leltár
+
+!!##A három műnem##
+
+    ##Epika:## a középpontjában egy történet áll. Közlője az elbeszélő, aki leginkább kívül áll a történeten, egyes szám harmadik személyben beszél. Epikai műfajok pl. az eposz, a regény, a verses regény és az elbeszélő költemény.
+    ##Líra:## szubjektív, belső nézőpontú, érzelemközpontú. Lírai műfajok pl.: az elégia, az óda, a dal
+    ##Dráma:## Színpadon előadható, formailag párbeszédes. Drámai műfaj a tragédia, komédia vagy a drámai költemény.
