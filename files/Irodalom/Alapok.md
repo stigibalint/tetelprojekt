@@ -313,7 +313,7 @@ A szó eredeti értelme valósághűség. Célja a jelenségek minél valóságh
 
 Képviselői: Mikszáth, Móricz, Jókai, Csehov, Ibsen, Tolsztoj, Dosztojevszkij, Turgenyev, Balzac, Stendhal.
 
-!!
+
 @@Műnemek, műfajok, verstípusok, egyéb műfajelméleti fogalmak@@
 
 !!##novella:## kisepikai műfaj.  Részletezés nélküli, egy szálon futó történet, csak néhány szereplőt vonultat fel, jellegzetes eleme a váratlan fordulat, a mely a kifejletet előkészíti. (Pl. Boccaccio, Mikszáth, Móricz).

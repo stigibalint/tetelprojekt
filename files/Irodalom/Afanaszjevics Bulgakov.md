@@ -26,7 +26,7 @@ vallásos vagy ateista, etikai szempontból az a vízválasztó, hogy hagyja-e
 gondolkodót.
 ##Szerkezete:## Összetett . A valóságos vagy képzelt cselekvések mindvégig két síkon,
 nevezetesen a jelenben (Moszkvában) és ezzel párhuzamosan az ókorban (Jerusalaimban, a
-keresztény mítosz parafrázisaként) játszódnak. Mozaikszerűen épül fel, sokrétű,##
+keresztény mítosz parafrázisaként) játszódnak. Mozaikszerűen épül fel, sokrétű,
 sokféleképpen: értelmezett alkotás, amelyben sok műfaj és stílus (romantika, realizmus,
 groteszk) keveredik, s ennek ellenére mégis többé-kevésbé egységes egészet alkot. A
 cselekmény alapvetően három, összevissza bogozódó szálon fut; az első a Moszkvába
@@ -55,26 +55,26 @@ bódét látunk „Sör, ásványvíz" felirattal - sör és ásványvíz viszon
 kajszibarackszörp. Jellegzetes fonákság a „másodlagos frissességű tokhal" kifejezés is;
 Moszkva: fonákságok és álságok összessége. Ezek a hibák, csalárdságok és bűnök, a hamis
 ideológia és a leplezett diktatúra nem csupán általános létbizonytalanságot és szorongást
-okoznak, hanem a ##köztudatot## is alakítják,. A népképzelet a számára ##felfoghatatlan
-eseményt## így veszi tudomásul: ##„ördög tudja, mi lehet emögött". Mágikus-babonás
-képzelgések terjednek,## mégpedig éppen abban a szovjetrendszerben, amelynek ideológiai
+okoznak, hanem a ##köztudatot## is alakítják,. A népképzelet a számára ##felfoghatatlan##
+##eseményt## így veszi tudomásul: „ördög tudja, mi lehet emögött". Mágikus-babonás
+képzelgések terjednek, mégpedig éppen abban a szovjetrendszerben, amelynek ideológiai
 alapja és támasza a mindenfajta misztika tűzzel-vassal történő irtása a társadalmi tudatból.
-A Szovjetunióban kíméletlen ##ateista- materialista tudattisztítás zajlott, ami a legsivárabb
-talaj a léleknek, különösen a művészléleknek.##
+A Szovjetunióban kíméletlen ##ateista- materialista tudattisztítás zajlott, ami a legsivárabb##
+##talaj a léleknek, különösen a művészléleknek.##
 ##Az alakok nagy többsége a diktatúra engedelmes kiszolgálója.##
 !!##Stílus:##
 A regény különlegessége, hogy egészen különböző stílusú szövegrészek keverednek benne.
 1.Woland és barátainak megformálása, illetve bizarr csínyeik meséje egyértelműen a ##groteszk##
-(rút, torz, félelmet keltő vonások ötvöződnek benne mulatságos, kedves elemekkel) ##ábrázolásmód
-stílusjegyeit## viseli magán. Berlioz halála, a beszélő macska, a felfordult világ egyszerre
+(rút, torz, félelmet keltő vonások ötvöződnek benne mulatságos, kedves elemekkel) ##ábrázolásmód##
+##stílusjegyeit## viseli magán. Berlioz halála, a beszélő macska, a felfordult világ egyszerre
 komikus és ijesztő is Bulgakovnál.
 2.Fontos szerepet játszik a műben a ##társadalmi szatíra## (csípős, ostorozó gúny,a komikum egyik
 fajtája, a társadalmi visszásságokat, emberi gyengeségeket gúnyol ki) Ez a szatirikus hang leginkább a
 TÖMEGÍR nevű szervezettel függ össze, amely kevéssé tehetséges, ám annál fontosabb
 társadalmi pozíciókat betöltő alkotókat gyűjt magába. Hontalan az elmegyógyintézetben
 végül be is ismeri, hogy rossz költő, és elhatározza, hogy már nem fog több verset írni.
-3.Poncius Pilátus történetében viszont nyoma sincs a groteszknek, ezek a fejezetek ##realista
-stílusban## íródtak. Az elbeszélő általában kívülről ábrázolja a történéseket, szinte filmszerűen
+3.Poncius Pilátus történetében viszont nyoma sincs a groteszknek, ezek a fejezetek ##realista##
+##stílusban## íródtak. Az elbeszélő általában kívülről ábrázolja a történéseket, szinte filmszerűen
 megjelenítve azokat, csak Pilátus gondolataiba, érzelmeibe pillanthatunk bele. Erőteljes a
 látványszerűség, sűrűn váltakoznak a színek és a fények: a naplemente, a vihar, a holdfény
 mind erőteljes kolorittal idéződik fel. Ám a vizualitáson kívül erőteljes szerepet kapnak más
