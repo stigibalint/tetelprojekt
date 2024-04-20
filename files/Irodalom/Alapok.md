@@ -28,7 +28,6 @@ Vörösmarty Mihály: Csongor és Tünde
 Wass Albert: Adjátok vissza a hegyeimet!
 Zrínyi Miklós: Szigeti veszedelem (részletek)
 
-Alap információk:
 
 @@A reneszánsz irodalma:@@
 !!##Janus Pannonius## (1434-1472): latin nyelven író, tudós humanista költő, az első európai rangú magyar költő; nagy tehetségű "fenegyerek"
