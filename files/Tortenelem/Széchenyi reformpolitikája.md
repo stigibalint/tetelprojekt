@@ -24,8 +24,8 @@ Az Ipari forradalom hatására Angliában átélt változások inspirálták Sz�
 
 @@Művei és gondolatai:@@
 --1830:-- ##Hitel -> Ősiség törvény bírálja##
-1832: A világ -> közteherviselés
-1833: Stádium -> közteherviselés
+1832: Világ -> közteherviselés
+1833: Stadium -> közteherviselés
 
 @@Széchenyi <-> Kossuth@@
 -> Széchenyi és Kossuth közötti feszültség a reformtempó és a politikai víziók között tetőzött. 
