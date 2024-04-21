@@ -377,8 +377,15 @@ footer p{
 #closeButton{
         margin-right: 0.1rem;
     }
-@media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 1100px) {
 
+img{
+    width: auto;
+    max-width: 270px;
+    height: 200px;
+}
+    }
+@media only screen and (max-width: 900px) {
 
     #contentWrapper {
         flex-direction: column;
@@ -908,12 +915,10 @@ function getContent(filename) {
             data = data.replace(/@@(.*?)@@/g, '<h2>$1</h2>');
             data = data.replace(/&&(.*?)&&/g, '<li>$1</li>');
             data = data.replace(/!!(.*?) /g, '<br>$1 ');
-
             data = data.replace(/\*\*(.*?)\.jpg\*\*/g, '<img src="Kepek/$1.jpg" style="max-width: 200px; max-height: 200px;">');
-   
-
+            data = data.replace(/\%\%(.*?)\.jpg\%\%/g, '<img src="Kepek/$1.jpg" style="max-width: 580px; max-height: 580px;">');
+            data = data.replace(/\=\=(.*?)\.jpg\=\=/g, '<img src="Kepek/$1.jpg" style="max-width: 420px; max-height: 420px;">');
             data = data.replace(/\?\?(.*?)\?\?/g, '<div class="question">$1</div>');
- 
             data = data.replace(/\$-(.*?)-\$/g, '<div class="answer"><input type="radio" name="answer" value="$1">$1</div>');
             data = data.replace(/\$\$(.*?)\$\$/g, '<div class="answer correct"><input type="radio" name="answer" value="$1">$1</div>');
 
