@@ -23,3 +23,10 @@ Deák: passzív ellenállás: a kivárás politikája → elérte a célját, me
 1865: Deák húsvéti cikke → „készek leszünk mindenkor törvényszabta úton saját törvényeinket a birodalom szilárd fennállásának biztosításával összhangba hozni”+ kell hogy legyen közös ügyünk → tulajdonképpen enged ’48-ból
 Ferenc József készséggel fogadta a lehetőséget, leváltotta Schmerlinget, 65. dec.: ogy., utána megkezdődött a kiegyezési tárgyalássorozat
 a külpolitikai események felgyorsították az egyezkedést – 1866: Königgrätz: porosz győzelem
+1867-ben megalakult a felelős magyar kormány, amelynek miniszterelnöke gróf Andrássy Gyula lett. A magyar országgyűlés törvényekbe foglalta a kiegyezést. Visszaállították az 1848. áprilisi törvények jelentős részét, és sor került Ferenc József magyar királlyá koronázására. Ez alkalomból az uralkodó amnesztiát  adott a politikai okokból börtönbe vetettek vagy külföldre űzöttek számára.
+@@Az új dualista állam@@
+Az 1867-ben megkötött egyezséget összefoglalóan osztrák‒magyar kiegyezésnek nevezzük, az ekkor megalakult két központú államot pedig Osztrák‒Magyar Monarchiának. Két, jogilag egyenrangú állam szövetsége jött létre, amelyet dualizmusnak hívunk. Az Osztrák Császárság központja Bécs, a Magyar Királyság fővárosa pedig Pest-Buda volt. Közös volt az uralkodó, aki így osztrák császár és magyar király is volt egy személyben. Ferenc József az új rendszer keretei között is fontos döntési jogokat tartott fenn a maga számára, például a hadsereg irányításában és a hivatalnokok kinevezésében.
+
+Közös ügynek számítottak a Monarchia külügyei és hadügyei, valamint e két feladat költségeit érintő pénzügyek. 
+
+Horvátországgal a szabadságharc óta feszült viszonyt a horvát­‒magyar kiegyezés rendezte. Horvátország a belügyeit önállóan intézhette, saját országgyűlése is volt, amely tagokat küldött a magyar országgyűlésbe. Pénzügyileg azonban Magyarországtól függött, törvényei pedig nem lehettek ellentétesek a magyar jogszabályokkal.
