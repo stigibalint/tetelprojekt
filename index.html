@@ -389,11 +389,13 @@ footer p{
     }
     @media only screen and (max-width: 1100px) {
 
-img{
-    width: auto;
-    max-width: 270px;
-    height: 200px;
+img {
+  width: auto;
+  max-width: 270px;
+  height: 200px;
+  cursor: pointer; 
 }
+
     }
 @media only screen and (max-width: 900px) {
 
@@ -542,6 +544,37 @@ html {
 html:hover {
   scrollbar-color: #777777 #1e1e1e;
 }
+.openableImage{
+    cursor: pointer;
+}
+.openedImage-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.openedImage-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.openedImage-overlay.active {
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .openedImage-overlay img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
     </style>
 </head>
@@ -552,6 +585,10 @@ html:hover {
           <div class="progress-bar" id="myBar"></div>
         </div>
       </div>
+      <div class="openedImages">
+     
+    </div>
+    
 <nav class="navbar" >
     <ul id="navbar-list"></ul>
 
@@ -622,7 +659,7 @@ html:hover {
     </div>
 </footer>
 <script>
-    
+
 const upButton = document.createElement('button');
 upButton.innerHTML = '<i class="fas fa-arrow-up"></i>'; 
 upButton.classList.add('up-button');
@@ -948,9 +985,10 @@ function getContent(filename) {
             data = data.replace(/@@(.*?)@@/g, '<h2>$1</h2>');
             data = data.replace(/&&(.*?)&&/g, '<li>$1</li>');
             data = data.replace(/!!(.*?) /g, '<br>$1 ');
-            data = data.replace(/\*\*(.*?)\.jpg\*\*/g, '<img src="Kepek/$1.jpg" style="max-width: 200px; max-height: 200px;">');
-            data = data.replace(/\%\%(.*?)\.jpg\%\%/g, '<img src="Kepek/$1.jpg" style="max-width: 580px; max-height: 580px;">');
-            data = data.replace(/\=\=(.*?)\.jpg\=\=/g, '<img src="Kepek/$1.jpg" style="max-width: 420px; max-height: 420px;">');
+            data = data.replace(/\*\*(.*?)\.jpg\*\*/g, '<img class="openableImage" src="Kepek/$1.jpg" style="max-width: 200px; max-height: 200px;">');
+            data = data.replace(/\%\%(.*?)\.jpg\%\%/g, '<img class="openableImage" src="Kepek/$1.jpg" style="max-width: 580px; max-height: 580px;">');
+            data = data.replace(/\=\=(.*?)\.jpg\=\=/g, '<img class="openableImage" src="Kepek/$1.jpg" style="max-width: 420px; max-height: 420px;">');
+
             data = data.replace(/\?\?(.*?)\?\?/g, '<div class="question">$1</div>');
             data = data.replace(/\$-(.*?)-\$/g, '<div class="answer"><input type="radio" name="answer" value="$1">$1</div>');
             data = data.replace(/\$\$(.*?)\$\$/g, '<div class="answer correct"><input type="radio" name="answer" value="$1">$1</div>');
@@ -978,9 +1016,34 @@ function getContent(filename) {
                     }
                 });
             });
+
+
+            const openableImages = document.querySelectorAll('.openableImage');
+const openedImagesContainer = document.querySelector('.openedImages');
+const overlay = document.createElement('div');
+overlay.classList.add('openedImage-overlay');
+document.body.appendChild(overlay);
+
+openableImages.forEach(image => {
+    image.addEventListener('click', function() {
+        const imageURL = this.getAttribute('src');
+        const imgElement = document.createElement('img');
+        imgElement.setAttribute('src', imageURL);
+        overlay.innerHTML = ''; // Clearing existing content
+        overlay.appendChild(imgElement);
+        overlay.classList.add('active');
+    });
+});
+
+overlay.addEventListener('click', function() {
+    this.classList.remove('active');
+});
+
         })
         .catch(error => console.error('Hiba történt a fájl tartalmának lekérése közben:', error));
 }
+
+
 function showAllItems() {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = `
@@ -1038,6 +1101,7 @@ function showAllItems() {
    
 
 }
+
 </script>
 
 
