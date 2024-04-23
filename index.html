@@ -1029,7 +1029,7 @@ openableImages.forEach(image => {
         const imageURL = this.getAttribute('src');
         const imgElement = document.createElement('img');
         imgElement.setAttribute('src', imageURL);
-        overlay.innerHTML = ''; // Clearing existing content
+        overlay.innerHTML = ''; 
         overlay.appendChild(imgElement);
         overlay.classList.add('active');
     });
