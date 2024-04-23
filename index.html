@@ -26,6 +26,16 @@
     animation: floatIn 0.4s ease;
   
 }
+@keyframes slideOutFade {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
 
 
 .navbar:first-of-type ul:first-of-type {
@@ -789,13 +799,13 @@ document.addEventListener('click', function(event) {
         const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
         const isNavbarListItem = event.target.closest('li');
         
-        if (isNavbarListItem) {
-            navbar.style.display = 'none';
-            mobileNavIcon.classList.remove('opened'); 
-        }
-        if (!isNavbar && !isMobileNavIcon && navbar.style.display === 'block') {
-            navbar.style.display = 'none';
-            mobileNavIcon.classList.remove('opened'); 
+        if (isNavbarListItem || (!isNavbar && !isMobileNavIcon && navbar.style.display === 'block')) {
+            navbar.style.animation = 'slideOutFade 0.5s forwards'; 
+            mobileNavIcon.classList.remove('opened');
+            setTimeout(function() {
+                navbar.style.display = 'none'; 
+                navbar.style.animation = ''; 
+            }, 500); 
         }
 
         if (isNavbar && mobileNavIcon.style.display !== 'block') {
