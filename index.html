@@ -519,6 +519,20 @@ img{
         }
     }
 
+html {
+  scrollbar-color: #555555 #1e1e1e;
+}
+
+
+html {
+  scrollbar-width: thin;
+}
+
+
+html:hover {
+  scrollbar-color: #777777 #1e1e1e;
+}
+
     </style>
 </head>
 <body>
@@ -532,8 +546,8 @@ img{
     <ul id="navbar-list"></ul>
 
      <ul id="nav-tortenelem"><i class="fas fa-folder"></i> Történelem</ul>
-    <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
-    <ul id="nav-nyelvtan" ><i class="fas fa-folder"></i> Nyelvtan</ul> 
+        <ul id="nav-irodalom"><i class="fas fa-folder"></i> Irodalom</ul>
+        <ul id="nav-nyelvtan" ><i class="fas fa-folder"></i> Nyelvtan</ul> 
 </nav>
 <div class="mobile-nav-icon">
     <i class="fas fa-bars fa-2x"></i>
@@ -598,6 +612,7 @@ img{
     </div>
 </footer>
 <script>
+    
 const upButton = document.createElement('button');
 upButton.innerHTML = '<i class="fas fa-arrow-up"></i>'; 
 upButton.classList.add('up-button');
@@ -766,10 +781,18 @@ mobileNavIcon.addEventListener('click', function(event) {
     }
 });
 
+
 document.addEventListener('click', function(event) {
     if (window.innerWidth <= 600) {
+        
         const isNavbar = event.target.closest('.navbar');
         const isMobileNavIcon = event.target.closest('.mobile-nav-icon');
+        const isNavbarListItem = event.target.closest('li');
+        
+        if (isNavbarListItem) {
+            navbar.style.display = 'none';
+            mobileNavIcon.classList.remove('opened'); 
+        }
         if (!isNavbar && !isMobileNavIcon && navbar.style.display === 'block') {
             navbar.style.display = 'none';
             mobileNavIcon.classList.remove('opened'); 
